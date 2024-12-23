@@ -106,6 +106,7 @@
           "IsTrigger": false,
           "Scale": "100,100,10",
           "Static": false,
+          "Surface": "sounds/snow.surface",
           "SurfaceVelocity": "0,0,0"
         }
       ]
@@ -211,7 +212,7 @@
                 "mode": "Mirrored"
               }
             ],
-            "Constants": "1,0,0,0"
+            "Constants": "0,0,0,0"
           },
           "Brightness": {
             "Type": "Constant",
@@ -305,10 +306,10 @@
                 "mode": "Mirrored"
               }
             ],
-            "Constants": "9.3,0,0,0"
+            "Constants": "0.5,0,0,0"
           },
           "Force": true,
-          "ForceDirection": "0,0,-25",
+          "ForceDirection": "0,3.399999,-25",
           "ForceScale": {
             "Type": "Constant",
             "Evaluation": "Life",
@@ -1260,6 +1261,174 @@
               "DebugMaterial": "materials/debug.vmat"
             }
           ]
+        }
+      ]
+    },
+    {
+      "__guid": "e67116cf-ecc5-4247-8fa7-fe361a55659a",
+      "Flags": 0,
+      "Name": "Credits",
+      "Position": "243.3158,109.493,320.4832",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.TextRenderer",
+          "__guid": "a1ff1280-873b-4b39-96fd-b08eac2bf7f8",
+          "__version": 1,
+          "BlendMode": "Normal",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "Scale": 0.3,
+          "TextAlignment": "Center",
+          "TextScope": {
+            "Text": "Footsteps on crunchy snow - by Kevin Boucher with CC0 1.0 Universal License from Zapsplat.com",
+            "TextColor": "0.45103,0.47149,0.5297,1",
+            "FontName": "Poppins",
+            "FontSize": 64,
+            "FontWeight": 800,
+            "FontItalic": false,
+            "LineHeight": 1,
+            "LetterSpacing": 0,
+            "WordSpacing": 0,
+            "Outline": {
+              "Enabled": false,
+              "Size": 4,
+              "Color": "0,0,1,1"
+            },
+            "Shadow": {
+              "Enabled": false,
+              "Size": 4,
+              "Color": "0,0,0,1",
+              "Offset": "4,4"
+            },
+            "OutlineUnder": {
+              "Enabled": false,
+              "Size": 4,
+              "Color": "0,1,0,1"
+            },
+            "ShadowUnder": {
+              "Enabled": false,
+              "Size": 4,
+              "Color": "0,0,0,1",
+              "Offset": "4,4"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "4d5d661f-c2d3-415f-b950-81bbf03f384e",
+      "Flags": 0,
+      "Name": "Credits (1)",
+      "Position": "243.3158,109.493,292.1373",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.TextRenderer",
+          "__guid": "eae6758d-048c-4437-bf1c-2ab5f719a903",
+          "__version": 1,
+          "BlendMode": "Normal",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "Scale": 0.3,
+          "TextAlignment": "Center",
+          "TextScope": {
+            "Text": "Body impact, fall on snow - by Blastwave FX with Standard License License from Zapsplat.com",
+            "TextColor": "0.45103,0.47149,0.5297,1",
+            "FontName": "Poppins",
+            "FontSize": 64,
+            "FontWeight": 800,
+            "FontItalic": false,
+            "LineHeight": 1,
+            "LetterSpacing": 0,
+            "WordSpacing": 0,
+            "Outline": {
+              "Enabled": false,
+              "Size": 4,
+              "Color": "0,0,1,1"
+            },
+            "Shadow": {
+              "Enabled": false,
+              "Size": 4,
+              "Color": "0,0,0,1",
+              "Offset": "4,4"
+            },
+            "OutlineUnder": {
+              "Enabled": false,
+              "Size": 4,
+              "Color": "0,1,0,1"
+            },
+            "ShadowUnder": {
+              "Enabled": false,
+              "Size": 4,
+              "Color": "0,0,0,1",
+              "Offset": "4,4"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "0006023a-cf7b-4f01-a169-25e9a5064339",
+      "Flags": 0,
+      "Name": "Credits (2)",
+      "Position": "243.3158,109.493,262.0185",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.TextRenderer",
+          "__guid": "b382597b-0c86-4e3d-b1b9-dbc306fd906e",
+          "__version": 1,
+          "BlendMode": "Normal",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "Scale": 0.3,
+          "TextAlignment": "Center",
+          "TextScope": {
+            "Text": "Body with leather suit falling on snow. - by SmartSound with Standard License License from Zapsplat.com",
+            "TextColor": "0.45103,0.47149,0.5297,1",
+            "FontName": "Poppins",
+            "FontSize": 64,
+            "FontWeight": 800,
+            "FontItalic": false,
+            "LineHeight": 1,
+            "LetterSpacing": 0,
+            "WordSpacing": 0,
+            "Outline": {
+              "Enabled": false,
+              "Size": 4,
+              "Color": "0,0,1,1"
+            },
+            "Shadow": {
+              "Enabled": false,
+              "Size": 4,
+              "Color": "0,0,0,1",
+              "Offset": "4,4"
+            },
+            "OutlineUnder": {
+              "Enabled": false,
+              "Size": 4,
+              "Color": "0,1,0,1"
+            },
+            "ShadowUnder": {
+              "Enabled": false,
+              "Size": 4,
+              "Color": "0,0,0,1",
+              "Offset": "4,4"
+            }
+          }
         }
       ]
     }
