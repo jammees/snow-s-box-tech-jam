@@ -20,5 +20,5 @@ Layer0
 
 	//---- Snow ----
 	f_SnowHeight "2.660"
-	SnowMask "materials/default/default_color.tga"
+	SnowMask "[1.000000 1.000000 1.000000 1.000000]"
 }
