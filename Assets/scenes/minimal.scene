@@ -76,16 +76,16 @@
       ]
     },
     {
-      "__guid": "6ad70641-3c6c-4402-9c85-9a4969af4764",
+      "__guid": "28872fd5-6824-4bf4-ba50-b13e8db5e28e",
       "Flags": 0,
-      "Name": "Plane",
-      "Scale": "10,10,5",
-      "Tags": "light_spot,light",
+      "Name": "Plane (1)",
+      "Scale": "37.69998,36.69999,5",
+      "Tags": "light,light_spot",
       "Enabled": true,
       "Components": [
         {
           "__type": "Sandbox.ModelRenderer",
-          "__guid": "0b6a18bf-fdb8-4661-970e-ef635bfa9baa",
+          "__guid": "6525fd65-8c5d-4735-a3b3-dbb3dbedb55d",
           "BodyGroups": 18446744073709551615,
           "CreateAttachments": false,
           "MaterialOverride": "materials/default.vmat",
@@ -101,7 +101,7 @@
         },
         {
           "__type": "Sandbox.BoxCollider",
-          "__guid": "0715cb55-1733-4f5e-8560-c288b8695631",
+          "__guid": "28fc09c3-1870-459e-8f49-7b233fb8ca85",
           "Center": "0,0,-5",
           "IsTrigger": false,
           "Scale": "100,100,10",
@@ -786,9 +786,9 @@
       ]
     },
     {
-      "__guid": "5b7e8029-9815-4c7a-aa1c-58d57de76528",
+      "__guid": "ff684ae1-9939-413d-ab94-a5e8324bcd26",
       "Flags": 0,
-      "Name": "Snow",
+      "Name": "Snow (1)",
       "Position": "0,0,2.345918",
       "Scale": "5,5,5",
       "Tags": "snow",
@@ -796,7 +796,7 @@
       "Components": [
         {
           "__type": "Sandbox.ModelRenderer",
-          "__guid": "c0c6b8fb-f0c8-4270-a7de-9ab3782143f8",
+          "__guid": "fd16fbc9-95ec-44c0-8542-fb8f95b9ad9b",
           "BodyGroups": 18446744073709551615,
           "CreateAttachments": false,
           "MaterialOverride": "materials/snow.vmat",
@@ -812,43 +812,43 @@
         },
         {
           "__type": "SnowHandler",
-          "__guid": "ff71c09f-2465-4e26-a9e9-3ca1859a5cc4",
+          "__guid": "18ad2f10-6fb6-4a88-a9a7-ff4068a62083",
           "Renderer": {
             "_type": "component",
-            "component_id": "c0c6b8fb-f0c8-4270-a7de-9ab3782143f8",
-            "go": "5b7e8029-9815-4c7a-aa1c-58d57de76528",
+            "component_id": "fd16fbc9-95ec-44c0-8542-fb8f95b9ad9b",
+            "go": "ff684ae1-9939-413d-ab94-a5e8324bcd26",
             "component_type": "ModelRenderer"
           },
           "SnowCamera": {
             "_type": "component",
-            "component_id": "6f0179f9-a78b-457b-b1f7-b6d740b4465a",
-            "go": "593060f7-878a-4fdc-b00c-957ac940ad05",
+            "component_id": "427049f8-6460-4226-85b4-42783726b71f",
+            "go": "9dad70bb-f4c0-4c00-8e69-38e7dcd045e6",
             "component_type": "CameraComponent"
           }
         },
         {
           "__type": "Sandbox.Snow.SnowQualityHandler",
-          "__guid": "6f63d311-f6c5-4da3-ad0d-537986bd96b0",
+          "__guid": "c893d738-9d12-4bc1-bd6b-81c0384cbd21",
           "HighModel": "models/snow_mesh/snow_mesh_high.vmdl",
           "LowModel": "models/snow_mesh/snow_mesh_low.vmdl",
           "MedModel": "models/snow_mesh/snow_mesh_med.vmdl",
           "SnowHandler": {
             "_type": "component",
-            "component_id": "ff71c09f-2465-4e26-a9e9-3ca1859a5cc4",
-            "go": "5b7e8029-9815-4c7a-aa1c-58d57de76528",
+            "component_id": "18ad2f10-6fb6-4a88-a9a7-ff4068a62083",
+            "go": "ff684ae1-9939-413d-ab94-a5e8324bcd26",
             "component_type": "SnowHandler"
           },
           "SnowRenderer": {
             "_type": "component",
-            "component_id": "c0c6b8fb-f0c8-4270-a7de-9ab3782143f8",
-            "go": "5b7e8029-9815-4c7a-aa1c-58d57de76528",
+            "component_id": "fd16fbc9-95ec-44c0-8542-fb8f95b9ad9b",
+            "go": "ff684ae1-9939-413d-ab94-a5e8324bcd26",
             "component_type": "ModelRenderer"
           }
         }
       ],
       "Children": [
         {
-          "__guid": "593060f7-878a-4fdc-b00c-957ac940ad05",
+          "__guid": "9dad70bb-f4c0-4c00-8e69-38e7dcd045e6",
           "Flags": 0,
           "Name": "Camera",
           "Position": "0,0,-2.216771",
@@ -858,14 +858,14 @@
           "Components": [
             {
               "__type": "Sandbox.CameraComponent",
-              "__guid": "6f0179f9-a78b-457b-b1f7-b6d740b4465a",
+              "__guid": "427049f8-6460-4226-85b4-42783726b71f",
               "BackgroundColor": "0,0,0,1",
               "ClearFlags": "All",
               "FieldOfView": 46.02,
               "IsMainCamera": false,
               "Orthographic": true,
               "OrthographicHeight": 1007.7,
-              "Priority": 2,
+              "Priority": 1,
               "RenderExcludeTags": "",
               "RenderTags": "snowcollider",
               "TargetEye": "None",
@@ -875,7 +875,7 @@
             },
             {
               "__type": "Sandbox.Blur",
-              "__guid": "9f519125-d4c6-4426-96f4-8fb93b332797",
+              "__guid": "4136f01b-ae68-40f2-a03b-7cb29fbb44ad",
               "Size": 0
             }
           ]
@@ -886,7 +886,7 @@
       "__guid": "3c2490ef-54a0-49bb-8f13-490e40aa51d1",
       "Flags": 0,
       "Name": "Cube",
-      "Position": "21.41684,74.12442,45.5507",
+      "Position": "21.41684,74.12442,306.6848",
       "Rotation": "0.00000001819328,-0.00000000000000008235059,0.3052325,0.952278",
       "Scale": "0.5632889,0.5632889,0.5632889",
       "Tags": "snowcollider",
@@ -920,6 +920,64 @@
         {
           "__type": "Sandbox.Rigidbody",
           "__guid": "4aaa0334-6785-4716-9bae-869559ea6e10",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {
+            "X": false,
+            "Y": false,
+            "Z": false,
+            "Pitch": false,
+            "Yaw": false,
+            "Roll": false
+          },
+          "MassCenterOverride": "0,0,0",
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "OverrideMassCenter": false,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ]
+    },
+    {
+      "__guid": "ef2748ee-0ac6-408f-a099-c30ecd4b22bf",
+      "Flags": 0,
+      "Name": "Cube (3)",
+      "Position": "-500.3935,360.5046,162.7021",
+      "Rotation": "0.00000001819328,-0.00000000000000008235059,0.3052325,0.952278",
+      "Scale": "0.5632889,0.5632889,0.5632889",
+      "Tags": "snowcollider",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "98df6af8-a2ac-45b1-a6fd-7b30c215fcac",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialOverride": "materials/default.vmat",
+          "Model": "models/dev/box.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,0,0.93333,1"
+        },
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "94fcb312-9ddf-4cd7-a1f5-b25dac46aaf1",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "9e93d762-6978-4a6a-993d-46ddb762513f",
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
@@ -1013,7 +1071,7 @@
           "__guid": "47febe4c-b723-4893-b835-6edbc3673ce8",
           "BodyGroups": 18446744073709551615,
           "CreateAttachments": false,
-          "MaterialOverride": "materials/default.vmat",
+          "MaterialOverride": "materials/blend_test.vmat",
           "Model": "models/dev/sphere.vmdl",
           "RenderOptions": {
             "GameLayer": true,
@@ -1022,7 +1080,7 @@
             "AfterUILayer": false
           },
           "RenderType": "On",
-          "Tint": "1,0,0.93333,1"
+          "Tint": "0,0,0,1"
         },
         {
           "__type": "Sandbox.Rigidbody",
@@ -1248,17 +1306,6 @@
               "Viewport": "0,0,1,1",
               "ZFar": 10000,
               "ZNear": 10
-            },
-            {
-              "__type": "DisplacementTest",
-              "__guid": "937ce55f-3ef6-4654-94bd-d377e4fbbee7",
-              "Camera": {
-                "_type": "component",
-                "component_id": "16a28f8f-ee67-4f47-8805-46650fcb4e1a",
-                "go": "2471829a-aec7-46bb-859e-4ca666a34ead",
-                "component_type": "CameraComponent"
-              },
-              "DebugMaterial": "materials/debug.vmat"
             }
           ]
         }
@@ -1268,7 +1315,7 @@
       "__guid": "e67116cf-ecc5-4247-8fa7-fe361a55659a",
       "Flags": 0,
       "Name": "Credits",
-      "Position": "243.3158,109.493,320.4832",
+      "Position": "795.2562,109.493,320.4832",
       "Enabled": true,
       "Components": [
         {
@@ -1324,7 +1371,7 @@
       "__guid": "4d5d661f-c2d3-415f-b950-81bbf03f384e",
       "Flags": 0,
       "Name": "Credits (1)",
-      "Position": "243.3158,109.493,292.1373",
+      "Position": "795.2562,109.493,292.1373",
       "Enabled": true,
       "Components": [
         {
@@ -1380,7 +1427,7 @@
       "__guid": "0006023a-cf7b-4f01-a169-25e9a5064339",
       "Flags": 0,
       "Name": "Credits (2)",
-      "Position": "243.3158,109.493,262.0185",
+      "Position": "795.2562,109.493,262.0185",
       "Enabled": true,
       "Components": [
         {
@@ -1424,6 +1471,174 @@
             },
             "ShadowUnder": {
               "Enabled": false,
+              "Size": 4,
+              "Color": "0,0,0,1",
+              "Offset": "4,4"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "8fb81aba-00cf-4f10-9847-6e0ec6bd5390",
+      "Flags": 0,
+      "Name": "Credits (3)",
+      "Position": "795.2562,109.493,211.0761",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.TextRenderer",
+          "__guid": "6d146bcd-0aed-4afd-8fa5-e46de176cbd9",
+          "__version": 1,
+          "BlendMode": "Normal",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "Scale": 0.3,
+          "TextAlignment": "Center",
+          "TextScope": {
+            "Text": "Use bindless textures maybe AND fix texture formats",
+            "TextColor": "1,0.26667,0,1",
+            "FontName": "Poppins",
+            "FontSize": 64,
+            "FontWeight": 800,
+            "FontItalic": false,
+            "LineHeight": 1,
+            "LetterSpacing": 0,
+            "WordSpacing": 0,
+            "Outline": {
+              "Enabled": true,
+              "Size": 4,
+              "Color": "0,0,1,1"
+            },
+            "Shadow": {
+              "Enabled": false,
+              "Size": 4,
+              "Color": "0,0,0,1",
+              "Offset": "4,4"
+            },
+            "OutlineUnder": {
+              "Enabled": false,
+              "Size": 4,
+              "Color": "0,1,0,1"
+            },
+            "ShadowUnder": {
+              "Enabled": true,
+              "Size": 4,
+              "Color": "0,0,0,1",
+              "Offset": "4,4"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "eba04880-b835-49fd-9ba7-0e79c9b58c3f",
+      "Flags": 0,
+      "Name": "Credits (4)",
+      "Position": "795.2562,109.493,189.1138",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.TextRenderer",
+          "__guid": "847c1b4f-d515-40b6-a7e6-82cd378d6f4e",
+          "__version": 1,
+          "BlendMode": "Normal",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "Scale": 0.3,
+          "TextAlignment": "Center",
+          "TextScope": {
+            "Text": "also also make snow height a bit more varied",
+            "TextColor": "1,0.26667,0,1",
+            "FontName": "Poppins",
+            "FontSize": 64,
+            "FontWeight": 800,
+            "FontItalic": false,
+            "LineHeight": 1,
+            "LetterSpacing": 0,
+            "WordSpacing": 0,
+            "Outline": {
+              "Enabled": true,
+              "Size": 4,
+              "Color": "0,0,1,1"
+            },
+            "Shadow": {
+              "Enabled": false,
+              "Size": 4,
+              "Color": "0,0,0,1",
+              "Offset": "4,4"
+            },
+            "OutlineUnder": {
+              "Enabled": false,
+              "Size": 4,
+              "Color": "0,1,0,1"
+            },
+            "ShadowUnder": {
+              "Enabled": true,
+              "Size": 4,
+              "Color": "0,0,0,1",
+              "Offset": "4,4"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "6bef2e09-ade4-456e-8cc1-60fcb0be6557",
+      "Flags": 0,
+      "Name": "Credits (5)",
+      "Position": "795.2562,109.493,137.7519",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.TextRenderer",
+          "__guid": "e6680dd1-de38-4528-98a7-28627df63935",
+          "__version": 1,
+          "BlendMode": "Normal",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "Scale": 0.3,
+          "TextAlignment": "Center",
+          "TextScope": {
+            "Text": "can\u0027t get depth buffer is using ortho camera, since no depth but I need one :(",
+            "TextColor": "1,0.26667,0,1",
+            "FontName": "Poppins",
+            "FontSize": 64,
+            "FontWeight": 800,
+            "FontItalic": false,
+            "LineHeight": 1,
+            "LetterSpacing": 0,
+            "WordSpacing": 0,
+            "Outline": {
+              "Enabled": true,
+              "Size": 4,
+              "Color": "0,0,1,1"
+            },
+            "Shadow": {
+              "Enabled": false,
+              "Size": 4,
+              "Color": "0,0,0,1",
+              "Offset": "4,4"
+            },
+            "OutlineUnder": {
+              "Enabled": false,
+              "Size": 4,
+              "Color": "0,1,0,1"
+            },
+            "ShadowUnder": {
+              "Enabled": true,
               "Size": 4,
               "Color": "0,0,0,1",
               "Offset": "4,4"
