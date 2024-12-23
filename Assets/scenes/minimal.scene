@@ -790,7 +790,7 @@
       "Flags": 0,
       "Name": "Snow (1)",
       "Position": "0,0,2.345918",
-      "Scale": "5,5,5",
+      "Scale": "1,1,5",
       "Tags": "snow",
       "Enabled": true,
       "Components": [
