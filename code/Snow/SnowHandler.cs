@@ -25,6 +25,8 @@ public sealed class SnowHandler : Component
 
 	protected override void OnStart()
 	{
+		Renderer.MaterialOverride = Renderer.MaterialOverride.CreateCopy();
+		
 		SnowDebugTexture = Texture.Load( FileSystem.Mounted, "textures/debugsnowmask.png" );
 		
 		// load compute shader
