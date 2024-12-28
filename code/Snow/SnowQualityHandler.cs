@@ -44,6 +44,21 @@ public sealed class SnowQualityHandler: Component
 		}
 	}
 	private static float _snowQuality;
+	
+	[ConVar( "snow_texture_size" )]
+	public static float SnowTextureSize
+	{
+		get => _snowTextureSize;
+		set
+		{
+			Log.Info( value );
+			
+			Log.Warning( "If you are reading this, I forgot to actually implement this lol" );
+			_snowTextureSize = (int)value;
+			Instance.SnowHandler.TextureSize = _snowTextureSize;
+		}
+	}
+	private static int _snowTextureSize;
 
 	internal static SnowQualityHandler Instance;
 	
