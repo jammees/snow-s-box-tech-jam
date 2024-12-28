@@ -8,26 +8,31 @@ using Sandbox.Rendering;
 public sealed class SnowHandler : Component
 {
 	[Property]
-	private ModelRenderer Renderer { get; set; }
+	public Model RenderModel { get; set; }
 	
 	[Property]
 	private CameraComponent SnowCamera { get; set; }
 
-	// private Texture SnowMask;
+	public int TextureSize { get; set; } = 1024;
+	
+	private SceneCustomObject SnowObject;
+
 	private ComputeShader SnowMaskCompute;
 	private ComputeShader SnowMaskBlurCompute;
 
-	private Texture SnowDebugTexture;
 	private Texture MaskTexture;
 	private Texture SnowRenderTarget;
 	private Texture SnowMask;
-	private RenderAttributes SnowAttributes = new();
+	private readonly RenderAttributes SnowAttributes = new();
+	
+	protected override void DrawGizmos()
+	{
+		Gizmo.Draw.Model( RenderModel );
+	}
 
 	protected override void OnStart()
 	{
-		Renderer.MaterialOverride = Renderer.MaterialOverride.CreateCopy();
-		
-		SnowDebugTexture = Texture.Load( FileSystem.Mounted, "textures/debugsnowmask.png" );
+		// Renderer.MaterialOverride = Renderer.MaterialOverride.CreateCopy();
 		
 		// load compute shader
 		SnowMaskCompute = new ComputeShader( "shaders/snowmask.shader" );
@@ -35,45 +40,62 @@ public sealed class SnowHandler : Component
 		
 		// TODO: use compressed formats with 1 channel as this is a lot of vram waste
 		// create mask texture
-		MaskTexture = Texture.Create( 1024, 1024 )
+		MaskTexture = Texture.Create( TextureSize, TextureSize )
 			.WithUAVBinding()
-			.WithFormat( ImageFormat.RGB888 )
+			.WithFormat( ImageFormat.R16 )
 			.WithGPUOnlyUsage()
+			.WithDynamicUsage()
 			.Finish();
 		
-		SnowMask = Texture.Create( 1024, 1024 )
+		SnowMask = Texture.Create( TextureSize, TextureSize )
 			.WithUAVBinding()
-			.WithFormat( ImageFormat.RGB888 )
+			.WithFormat( ImageFormat.R16 )
 			.WithGPUOnlyUsage()
+			.WithDynamicUsage()
 			.Finish();
 		
 		// create render target
 		SnowRenderTarget = Texture.CreateRenderTarget( )
 			.WithUAVBinding()
 			.WithFormat( ImageFormat.RGBA8888 )
-			.WithSize( new Vector2( 1024, 1024 ) )
+			.WithSize( new Vector2( TextureSize, TextureSize ) )
 			.WithGPUOnlyUsage()
 			.Create();
 		
 		SnowCamera.RenderTarget = SnowRenderTarget;
-		Renderer.MaterialOverride.Set( "SnowMask", SnowMask );
+
+		SnowCamera.AddHookAfterTransparent( "SnowGetCameraDepth", 0, camera =>
+		{
+			Graphics.GrabDepthTexture( "Screen", SnowAttributes );
+		} );
+		
+		SnowObject = new( Scene.SceneWorld );
+		SnowObject.RenderOverride = OnSnowRender;
+		SnowObject.Attributes.Set( "SnowMask", SnowMask );
+		SnowObject.Attributes.Set( "UvOffset", 1f / TextureSize );
+		SnowObject.Attributes.Set( "NotInPreviewMode", true );
 	}
 
 	protected override void OnPreRender()
 	{
 		SnowAttributes.Set( "Mask", MaskTexture );
-		SnowAttributes.Set( "Screen", SnowRenderTarget );
+		// SnowAttributes.Set( "Screen", SnowRenderTarget );
 		SnowAttributes.Set( "Result", SnowMask );
-		SnowMaskCompute.DispatchWithAttributes( SnowAttributes, 1024, 1024, 1 );
-		SnowMaskBlurCompute.DispatchWithAttributes( SnowAttributes, 1024, 1024, 1 );
+		SnowMaskCompute.DispatchWithAttributes( SnowAttributes, TextureSize, TextureSize, 1 );
+		SnowMaskBlurCompute.DispatchWithAttributes( SnowAttributes, TextureSize, TextureSize, 1 );
 	}
 
+	private void OnSnowRender( SceneObject obj )
+	{
+		Graphics.DrawModel( RenderModel, WorldTransform, SnowObject.Attributes );
+	}
+	
 	public void ResetSnowMask()
 	{
 		MaskTexture.Dispose();
-		MaskTexture = Texture.Create( 1024, 1024 )
+		MaskTexture = Texture.Create( TextureSize, TextureSize )
 			.WithUAVBinding()
-			.WithFormat( ImageFormat.RGB888 )
+			.WithFormat( ImageFormat.R16 )
 			.WithGPUOnlyUsage()
 			.Finish();
 	}

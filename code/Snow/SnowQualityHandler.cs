@@ -8,7 +8,6 @@ public sealed class SnowQualityHandler: Component
 	[Property] [Group( "Quality" )] private Model MedModel { get; set; }
 	[Property] [Group( "Quality" )] private Model LowModel { get; set; }
 	
-	[Property] [Group( "References" )] private ModelRenderer SnowRenderer { get; set; }
 	[Property] [Group( "References" )] private SnowHandler SnowHandler { get; set; }
 	
 	[ConVar( "snow_quality" )]
@@ -22,15 +21,15 @@ public sealed class SnowQualityHandler: Component
 			switch ( value )
 			{
 				case 1:
-					Instance.SnowRenderer.Model = Instance.LowModel;
+					Instance.SnowHandler.RenderModel = Instance.LowModel;
 					Log.Info( "Set snow quality to: low" );
 					break;
 				case 2:
-					Instance.SnowRenderer.Model = Instance.MedModel;
+					Instance.SnowHandler.RenderModel = Instance.MedModel;
 					Log.Info( "Set snow quality to: medium" );
 					break;
 				case 3:
-					Instance.SnowRenderer.Model = Instance.HighModel;
+					Instance.SnowHandler.RenderModel = Instance.HighModel;
 					Log.Info( "Set snow quality to: high" );
 					break;
 				default:
