@@ -1,0 +1,11 @@
+
+Layer0
+{
+	shader "shaders/complex.shader_c"
+
+	TextureColor "models/dev_table/table01_color.png"
+	TextureAmbientOcclusion "models/dev_table/table01_ao.png"
+	TextureNormal "models/dev_table/table01_normal.png"
+	TextureRoughness "models/dev_table/table01_rough.png"
+
+}
