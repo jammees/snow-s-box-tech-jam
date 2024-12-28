@@ -1280,6 +1280,16 @@
               },
               "Tint": "1,1,1,1",
               "UseAnimGraph": true
+            },
+            {
+              "__type": "LoadPlayerClothes",
+              "__guid": "7a8d7ea4-4a50-4ece-b31c-47743eea56fe",
+              "PlayerModel": {
+                "_type": "component",
+                "component_id": "9ee5879b-0517-4489-9c0d-9eeaacf9d10f",
+                "go": "ae69adb7-f007-4ec1-ba2d-9c67b4aabef8",
+                "component_type": "SkinnedModelRenderer"
+              }
             }
           ]
         },
