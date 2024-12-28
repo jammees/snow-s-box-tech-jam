@@ -1,0 +1,14 @@
+// THIS FILE IS AUTO-GENERATED
+
+Layer0
+{
+	shader "shaders/snowcovered.shader"
+
+	Mat_Color "models/dev_table/table01_color.png"
+	Mat_Normal "models/dev_table/table01_normal.png"
+	Snow_Color "materials/snow_material/snow010a_1k-jpg_color.jpg"
+	Snow_Normal "materials/snow_material/snow010a_1k-jpg_normal.jpg"
+
+	//---- Fog ----
+	g_bFogEnabled "1"
+}

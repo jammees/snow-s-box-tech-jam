@@ -13,7 +13,7 @@
 						_class = "DefaultMaterialGroup"
 						remaps = [  ]
 						use_global_default = true
-						global_default_material = "materials/snow.vmat"
+						global_default_material = "materials/default.vmat"
 					},
 				]
 			},
@@ -23,7 +23,7 @@
 				[
 					{
 						_class = "RenderMeshFile"
-						filename = "models/snow_mesh/snow_mesh_med.fbx"
+						filename = "models/cutscene_test/cutscene_test.fbx"
 						import_translation = [ 0.0, 0.0, 0.0 ]
 						import_rotation = [ 0.0, 0.0, 0.0 ]
 						import_scale = 1.0
@@ -36,7 +36,7 @@
 							exclude_by_default = true
 							exception_list = 
 							[
-								"med",
+								"Cube",
 							]
 						}
 					},

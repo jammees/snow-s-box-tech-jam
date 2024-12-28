@@ -19,6 +19,6 @@ Layer0
 	TextureTranslucency "materials/default/default_trans.tga"
 
 	//---- Snow ----
-	f_SnowHeight "2.660"
-	SnowMask "[1.000000 1.000000 1.000000 1.000000]"
+	f_SnowHeight "1.606"
+	SnowHeight "materials/snow_material/snow_heightmap.png"
 }

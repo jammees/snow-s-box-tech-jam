@@ -97,7 +97,7 @@
             "AfterUILayer": false
           },
           "RenderType": "On",
-          "Tint": "0.39546,0.51163,0.27128,1"
+          "Tint": "0.09951,0.42791,0.17067,1"
         },
         {
           "__type": "Sandbox.BoxCollider",
@@ -125,7 +125,7 @@
           "Burst": 0,
           "Delay": 0,
           "DestroyOnEnd": false,
-          "Duration": 10,
+          "Duration": 1,
           "Loop": true,
           "OnEdge": false,
           "Rate": 159.38,
@@ -157,7 +157,7 @@
           "RotationOffset": 0,
           "Scale": 1,
           "Shadows": false,
-          "SortMode": "Unsorted",
+          "SortMode": "ByDistance",
           "Texture": "materials/particle/particle_glow_04.vtex"
         },
         {
@@ -404,9 +404,9 @@
                 "mode": "Mirrored"
               }
             ],
-            "Constants": "10,0,0,0"
+            "Constants": "7,0,0,0"
           },
-          "MaxParticles": 1000,
+          "MaxParticles": 2000,
           "OrbitalForce": {
             "X": {
               "Type": "Constant",
@@ -789,36 +789,14 @@
       "__guid": "ff684ae1-9939-413d-ab94-a5e8324bcd26",
       "Flags": 0,
       "Name": "Snow (1)",
-      "Position": "0,0,2.345918",
       "Scale": "1,1,5",
       "Tags": "snow",
       "Enabled": true,
       "Components": [
         {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "fd16fbc9-95ec-44c0-8542-fb8f95b9ad9b",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialOverride": "materials/snow.vmat",
-          "Model": "models/snow_mesh/snow_mesh_high.vmdl",
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "Off",
-          "Tint": "1,1,1,1"
-        },
-        {
           "__type": "SnowHandler",
-          "__guid": "18ad2f10-6fb6-4a88-a9a7-ff4068a62083",
-          "Renderer": {
-            "_type": "component",
-            "component_id": "fd16fbc9-95ec-44c0-8542-fb8f95b9ad9b",
-            "go": "ff684ae1-9939-413d-ab94-a5e8324bcd26",
-            "component_type": "ModelRenderer"
-          },
+          "__guid": "8104df7a-6148-48bc-97da-707d800bc41a",
+          "RenderModel": "models/snow_mesh/snow_mesh_high.vmdl",
           "SnowCamera": {
             "_type": "component",
             "component_id": "427049f8-6460-4226-85b4-42783726b71f",
@@ -828,21 +806,15 @@
         },
         {
           "__type": "Sandbox.Snow.SnowQualityHandler",
-          "__guid": "c893d738-9d12-4bc1-bd6b-81c0384cbd21",
+          "__guid": "16e6a19b-e1f4-46b3-ad1c-317f657a3fd9",
           "HighModel": "models/snow_mesh/snow_mesh_high.vmdl",
           "LowModel": "models/snow_mesh/snow_mesh_low.vmdl",
           "MedModel": "models/snow_mesh/snow_mesh_med.vmdl",
           "SnowHandler": {
             "_type": "component",
-            "component_id": "18ad2f10-6fb6-4a88-a9a7-ff4068a62083",
+            "component_id": "8104df7a-6148-48bc-97da-707d800bc41a",
             "go": "ff684ae1-9939-413d-ab94-a5e8324bcd26",
             "component_type": "SnowHandler"
-          },
-          "SnowRenderer": {
-            "_type": "component",
-            "component_id": "fd16fbc9-95ec-44c0-8542-fb8f95b9ad9b",
-            "go": "ff684ae1-9939-413d-ab94-a5e8324bcd26",
-            "component_type": "ModelRenderer"
           }
         }
       ],
@@ -999,6 +971,64 @@
       ]
     },
     {
+      "__guid": "ed7b3744-0c90-42a8-9e5e-5daf90ed4e4a",
+      "Flags": 0,
+      "Name": "Sweeper",
+      "Position": "-276.8876,270.0785,42.60246",
+      "Scale": "7.263288,0.5632889,0.9632889",
+      "Tags": "snowcollider",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "90d38cb3-9336-4e6f-ac56-fd43c5b86e9d",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialOverride": "materials/default.vmat",
+          "Model": "models/dev/box.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,0,0.93333,1"
+        },
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "b10b10a4-99fa-4610-be17-f37e2ce6681f",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "bf914219-d6c7-4490-a82c-b06dbd05f0a1",
+          "__enabled": false,
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {
+            "X": false,
+            "Y": false,
+            "Z": false,
+            "Pitch": false,
+            "Yaw": false,
+            "Roll": false
+          },
+          "MassCenterOverride": "0,0,0",
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "OverrideMassCenter": false,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ]
+    },
+    {
       "__guid": "7e92f7a4-6e93-41b0-b6b1-1edf7ecc36ec",
       "Flags": 0,
       "Name": "Cube (1)",
@@ -1027,9 +1057,9 @@
         {
           "__type": "Sandbox.BoxCollider",
           "__guid": "04162bc0-9e13-48fb-8e3d-44659c899bdf",
-          "Center": "0,0,0",
+          "Center": "0,0,22.60001",
           "IsTrigger": false,
-          "Scale": "50,50,50",
+          "Scale": "43.40001,105.2,42.7",
           "Static": false,
           "SurfaceVelocity": "0,0,0"
         },
@@ -1071,7 +1101,7 @@
           "__guid": "47febe4c-b723-4893-b835-6edbc3673ce8",
           "BodyGroups": 18446744073709551615,
           "CreateAttachments": false,
-          "MaterialOverride": "materials/blend_test.vmat",
+          "MaterialOverride": "materials/snowcovered.vmat",
           "Model": "models/dev/sphere.vmdl",
           "RenderOptions": {
             "GameLayer": true,
@@ -1644,6 +1674,40 @@
               "Offset": "4,4"
             }
           }
+        }
+      ]
+    },
+    {
+      "__guid": "8bcc8963-b799-48b0-b3c4-719d61877bf2",
+      "Flags": 0,
+      "Name": "table01",
+      "Position": "240.4314,75.56854,0.6772494",
+      "Tags": "snowcollider",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "a180f54f-82a4-4eca-abcb-f6a54c57f7ee",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialOverride": "materials/snowcovered.vmat",
+          "Model": "models/dev_table/table01.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "6a8a2623-074a-45c1-8596-ae3f61d03636",
+          "IsTrigger": false,
+          "Model": "models/dev_table/table01.vmdl",
+          "Static": false,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     }
