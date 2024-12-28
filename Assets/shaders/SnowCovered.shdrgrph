@@ -1,0 +1,191 @@
+{
+  "Model": "models/dev/box.vmdl",
+  "Description": "",
+  "BlendMode": "Opaque",
+  "nodes": [
+    {
+      "_class": "Result",
+      "DefaultOpacity": 1,
+      "DefaultRoughness": 1,
+      "DefaultMetalness": 0,
+      "DefaultAmbientOcclusion": 1,
+      "Identifier": "0",
+      "Position": "228,-108",
+      "Albedo": {
+        "Identifier": "11",
+        "Output": "Result"
+      },
+      "Normal": {
+        "Identifier": "8",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "WorldNormal",
+      "Identifier": "1",
+      "Position": "-1512,192"
+    },
+    {
+      "_class": "DotProduct",
+      "Identifier": "2",
+      "Position": "-1236,240",
+      "InputA": {
+        "Identifier": "1",
+        "Output": "Result"
+      },
+      "InputB": {
+        "Identifier": "3",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "Float3",
+      "Min": "0,0,0",
+      "Max": "1,1,1",
+      "Value": "0,0,1",
+      "Name": "",
+      "IsAttribute": false,
+      "UI": {},
+      "Identifier": "3",
+      "Position": "-1464,312"
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "materials/snow_material/snow010a_1k-jpg_color.jpg",
+      "Sampler": {},
+      "UI": {
+        "Name": "Snow_Color",
+        "Default": "1,1,1,1",
+        "ShowExtension": true,
+        "ImageFormat": "BC7",
+        "SrgbRead": true
+      },
+      "Identifier": "4",
+      "Position": "-1044,-12"
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "materials/debug/debugempty_color.tga",
+      "Sampler": {},
+      "UI": {
+        "Name": "Mat_Color",
+        "Default": "1,1,1,1",
+        "ShowExtension": true,
+        "ImageFormat": "DXT1"
+      },
+      "Identifier": "5",
+      "Position": "-1044,-204"
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "models/citizen/skin/mascot/textures/mascot_01_bentnormal.png",
+      "Sampler": {},
+      "UI": {
+        "Name": "Mat_Normal",
+        "Default": "1,1,1,1",
+        "Extension": "Normal",
+        "ShowExtension": true,
+        "Processor": "NormalizeNormals",
+        "ImageFormat": "BC7"
+      },
+      "Identifier": "6",
+      "Position": "-900,360"
+    },
+    {
+      "_class": "TextureSampler",
+      "Image": "materials/snow_material/snow010a_1k-jpg_normal.jpg",
+      "Sampler": {},
+      "UI": {
+        "Name": "Snow_Normal",
+        "Default": "1,1,1,1",
+        "Extension": "Normal",
+        "ShowExtension": true,
+        "Processor": "NormalizeNormals"
+      },
+      "Identifier": "7",
+      "Position": "-900,564"
+    },
+    {
+      "_class": "Blend",
+      "Fraction": 0.5,
+      "BlendMode": "Mix",
+      "Clamp": true,
+      "Identifier": "8",
+      "Position": "-588,456",
+      "A": {
+        "Identifier": "6",
+        "Output": "Result"
+      },
+      "B": {
+        "Identifier": "7",
+        "Output": "Result"
+      },
+      "C": {
+        "Identifier": "2",
+        "Output": "Result"
+      }
+    },
+    {
+      "_class": "CombineVector",
+      "DefaultX": 0,
+      "DefaultY": 0,
+      "DefaultZ": 0,
+      "DefaultW": 0,
+      "Identifier": "9",
+      "Position": "-852,-180",
+      "X": {
+        "Identifier": "5",
+        "Output": "R"
+      },
+      "Y": {
+        "Identifier": "5",
+        "Output": "G"
+      },
+      "Z": {
+        "Identifier": "5",
+        "Output": "B"
+      }
+    },
+    {
+      "_class": "CombineVector",
+      "DefaultX": 0,
+      "DefaultY": 0,
+      "DefaultZ": 0,
+      "DefaultW": 0,
+      "Identifier": "10",
+      "Position": "-852,12",
+      "X": {
+        "Identifier": "4",
+        "Output": "R"
+      },
+      "Y": {
+        "Identifier": "4",
+        "Output": "G"
+      },
+      "Z": {
+        "Identifier": "4",
+        "Output": "B"
+      }
+    },
+    {
+      "_class": "Blend",
+      "Fraction": 0.5,
+      "BlendMode": "Mix",
+      "Clamp": true,
+      "Identifier": "11",
+      "Position": "-540,-60",
+      "A": {
+        "Identifier": "9",
+        "Output": "XYZ"
+      },
+      "B": {
+        "Identifier": "10",
+        "Output": "XYZ"
+      },
+      "C": {
+        "Identifier": "2",
+        "Output": "Result"
+      }
+    }
+  ]
+}
