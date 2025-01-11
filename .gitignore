@@ -30,3 +30,4 @@ Exports/
 snow.sln.DotSettings.user
 *.cap
 /Assets/sounds
+*.shader_c
