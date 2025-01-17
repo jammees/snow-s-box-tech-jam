@@ -10,7 +10,7 @@ public sealed class SnowQualityHandler: Component
 	
 	[Property] [Group( "References" )] private SnowHandler SnowHandler { get; set; }
 	
-	[ConVar( "snow_quality" )]
+	// [ConVar( "snow_quality" )]
 	public static float SnowQuality
 	{
 		get => _snowQuality;
@@ -44,7 +44,7 @@ public sealed class SnowQualityHandler: Component
 	}
 	private static float _snowQuality;
 	
-	[ConVar( "snow_texture_size" )]
+	// [ConVar( "snow_texture_size" )]
 	public static float SnowTextureSize
 	{
 		get => _snowTextureSize;
@@ -66,7 +66,7 @@ public sealed class SnowQualityHandler: Component
 		Instance = this;
 	}
 
-	[ConCmd("snow_reset")]
+	// [ConCmd("snow_reset")]
 	private static void ResetSnow()
 	{
 		Instance.SnowHandler.ResetSnowMask();

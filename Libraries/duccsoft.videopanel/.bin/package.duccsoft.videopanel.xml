@@ -1,0 +1,351 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>package.duccsoft.videopanel</name>
+    </assembly>
+    <members>
+        <member name="T:Duccsoft.AsyncVideoLoader">
+            <summary>
+            Provides a handy asynchronous wrapper for loading a VideoPlayer and waiting
+            until its video and audio are both loaded.
+            </summary>
+        </member>
+        <member name="T:Duccsoft.IAudioAccessor">
+            <summary>
+            Provides access to the audio-related functionality of VideoPlayer.
+            </summary>
+        </member>
+        <member name="P:Duccsoft.IAudioAccessor.Position">
+            <summary>
+            The position from which to play the sound.
+            </summary>
+        </member>
+        <member name="P:Duccsoft.IAudioAccessor.Volume">
+            <summary>
+            The volume at which the audio should play.
+            </summary>
+        </member>
+        <member name="P:Duccsoft.IAudioAccessor.ListenLocal">
+            <summary>
+            If true, audio will play as if it is coming from the UI. Otherwise, the
+            audio will be spatialized to sound as if it coming from the world at <see cref="P:Duccsoft.IAudioAccessor.Position"/>.
+            </summary>
+        </member>
+        <member name="P:Duccsoft.IAudioAccessor.TargetMixer">
+            <summary>
+            Specifies which audio mixer the sound should be played through.
+            </summary>
+        </member>
+        <member name="P:Duccsoft.IAudioAccessor.Muted">
+            <summary>
+            Specifies whether the audio should be muted. The state of <see cref="P:Duccsoft.IAudioAccessor.Muted"/>
+            may not necessarily depend on the state of <see cref="P:Duccsoft.IAudioAccessor.Volume"/> or vice versa.
+            </summary>
+        </member>
+        <member name="T:Duccsoft.IMediaUpdateListener">
+            <summary>
+            Represents a presentation-related object that must be updated every frame.
+            For example, a video that must update a texture, or a sound that must update 
+            its position.
+            </summary>
+        </member>
+        <member name="M:Duccsoft.IMediaUpdateListener.MediaUpdate">
+            <summary>
+            Contains the code that must run every frame. Will only be called
+            if this object has been registered with a MediaUpdateSystem.
+            </summary>
+        </member>
+        <member name="M:Duccsoft.IMediaUpdateListener.Register(Duccsoft.IMediaUpdateListener)">
+            <inheritdoc cref="M:Duccsoft.MediaUpdateSystem.Register(Duccsoft.IMediaUpdateListener)"/>
+        </member>
+        <member name="M:Duccsoft.IMediaUpdateListener.Unregister(Duccsoft.IMediaUpdateListener)">
+            <inheritdoc cref="M:Duccsoft.MediaUpdateSystem.Unregister(Duccsoft.IMediaUpdateListener)"/>
+        </member>
+        <member name="T:Duccsoft.MediaUpdateSystem">
+            <summary>
+            Responsible for updating every IMediaUpdateListener that has registered with this system.
+            </summary>
+        </member>
+        <member name="M:Duccsoft.MediaUpdateSystem.Register(Duccsoft.IMediaUpdateListener)">
+            <summary>
+            Allows an IMediaUpdateListener to have its MediaUpdate method called every frame.
+            </summary>
+        </member>
+        <member name="M:Duccsoft.MediaUpdateSystem.Unregister(Duccsoft.IMediaUpdateListener)">
+            <summary>
+            Removes an IMediaUpdateListener from the set of listeners that would have their
+            MediaUpdate method called every frame. This should be called in the destructor
+            or in Dispose.
+            </summary>
+        </member>
+        <member name="T:Duccsoft.TrackingAudioAccessor">
+            <summary>
+            Stores and applies the audio settings of a VideoPlayer, with the option
+            to have the audio position track a GameObject.
+            </summary>
+        </member>
+        <member name="M:Duccsoft.TrackingAudioAccessor.#ctor">
+            <summary>
+            Creates a new TrackingAudioAccessort that does not yet target a VideoPlayer.
+            </summary>
+        </member>
+        <member name="M:Duccsoft.TrackingAudioAccessor.#ctor(Sandbox.VideoPlayer)">
+            <summary>
+            Creates a new TrackingAudioAccessor targeting the specified VideoPlayer.
+            </summary>
+        </member>
+        <member name="P:Duccsoft.TrackingAudioAccessor.VideoPlayer">
+            <summary>
+            The instance of VideoPlayer that shall have its audio settings changed by this object.
+            </summary>
+        </member>
+        <member name="P:Duccsoft.TrackingAudioAccessor.Target">
+            <summary>
+            The GameObject from which to play the sound. The sound will automatically
+            follow the GameObject.
+            </summary>
+        </member>
+        <member name="P:Duccsoft.TrackingAudioAccessor.Position">
+            <summary>
+            The position from which to play the sound. Setting this will also
+            set <see cref="P:Duccsoft.TrackingAudioAccessor.Target"/> to null.
+            </summary>
+        </member>
+        <member name="P:Duccsoft.TrackingAudioAccessor.Volume">
+            <inheritdoc cref="P:Duccsoft.IAudioAccessor.Volume"/>
+        </member>
+        <member name="P:Duccsoft.TrackingAudioAccessor.ListenLocal">
+            <inheritdoc cref="P:Duccsoft.IAudioAccessor.ListenLocal"/>
+        </member>
+        <member name="P:Duccsoft.TrackingAudioAccessor.TargetMixer">
+            <inheritdoc cref="P:Duccsoft.IAudioAccessor.TargetMixer"/>
+        </member>
+        <member name="P:Duccsoft.TrackingAudioAccessor.Muted">
+            <inheritdoc cref="P:Duccsoft.IAudioAccessor.Muted"/>
+        </member>
+        <member name="M:Duccsoft.TrackingAudioAccessor.MediaUpdate">
+            <summary>
+            Updates properties of the underlying audio player to match the values specified in this object.
+            This will automatically be called on every frame.
+            </summary>
+        </member>
+        <member name="M:Duccsoft.TrackingAudioAccessor.Dispose">
+            <summary>
+            Unregisters this <see cref="T:Duccsoft.IMediaUpdateListener"/> from <see cref="T:Duccsoft.MediaUpdateSystem"/>.
+            </summary>
+        </member>
+        <member name="T:Duccsoft.IVideoPanel">
+            <summary>
+            Represents an instance of a VideoPlayer that may be controlled with <see cref="T:Duccsoft.VideoControlOverlay"/>.
+            </summary>
+        </member>
+        <member name="P:Duccsoft.IVideoPanel.IsLoading">
+            <summary>
+            Returns true if the next video is currently being loaded.
+            </summary>
+        </member>
+        <member name="P:Duccsoft.IVideoPanel.Duration">
+            <summary>
+            The duration in seconds of the currently playing video.
+            </summary>
+        </member>
+        <member name="P:Duccsoft.IVideoPanel.IsPlaying">
+            <summary>
+            Returns true if video is currently playing.
+            </summary>
+        </member>
+        <member name="P:Duccsoft.IVideoPanel.PlaybackTime">
+            <summary>
+            Returns the current playback time of the currently playing video.
+            </summary>
+        </member>
+        <member name="P:Duccsoft.IVideoPanel.IsPaused">
+            <summary>
+            Returns true if the currently playing video is paused.
+            </summary>
+        </member>
+        <member name="M:Duccsoft.IVideoPanel.Seek(System.Single)">
+            <summary>
+            Moves playback of the currently playing video to a specific time.
+            </summary>
+            <param name="time">The desired playback time in seconds.</param>
+        </member>
+        <member name="M:Duccsoft.IVideoPanel.TogglePause">
+            <summary>
+            Toggles between playing/paused states for the currently playing video.
+            </summary>
+        </member>
+        <member name="P:Duccsoft.IVideoPanel.Audio">
+            <summary>
+            Provides options for changing audio settings for the currently playing video.
+            </summary>
+        </member>
+        <member name="T:Duccsoft.VideoControlOverlay">
+            <summary>
+            A Panel meant to stretch over an entire VideoPanel and provide a progress bar and buttons.
+            </summary>
+        </member>
+        <member name="P:Duccsoft.VideoControlOverlay.VideoPanel">
+            <summary>
+            The VideoPanel instance that we will be controlling. You may replace this with any
+            <see cref="T:Duccsoft.IVideoPanel"/> object that you that you wish to control using this UI.
+            </summary>
+        </member>
+        <member name="P:Duccsoft.VideoControlOverlay.AutoHide">
+            <summary>
+            If true, the video controls will automatically be hidden after the AutoHideDelay period has elapsed
+            and the user is not hovering their mouse over this panel.
+            </summary>
+        </member>
+        <member name="P:Duccsoft.VideoControlOverlay.AutoHideDelay">
+            <summary>
+            If AutoHide is true, this is the time in seconds that must elapse before this panel
+            will conceal the video controls.
+            </summary>
+        </member>
+        <member name="T:Duccsoft.VideoPanel">
+            <summary>
+            A Panel that manages an instance of a VideoPlayer, using its texture as the background image.
+            Supports all the playback controls of VideoPlayer.
+            </summary>
+        </member>
+        <member name="P:Duccsoft.VideoPanel.VideoPath">
+            <summary>
+            The path/url of a video relative to VideoRoot.
+            </summary>
+        </member>
+        <member name="P:Duccsoft.VideoPanel.VideoRoot">
+            <summary>
+            Specifies where the video may be found, whether it comes from a BaseFileSystem or a website.
+            Set this to <see cref="F:Duccsoft.VideoRoot.WebStream"/> if VideoPath is a URL.
+            </summary>
+        </member>
+        <member name="P:Duccsoft.VideoPanel.ShouldLoop">
+            <summary>
+            If true, the video will automatically loop whenever HasReachedEnd is true.
+            </summary>
+        </member>
+        <member name="P:Duccsoft.VideoPanel.IsLoading">
+            <summary>
+            If true, the video is in the process of being loaded (e.g. from a remote server).
+            </summary>
+        </member>
+        <member name="P:Duccsoft.VideoPanel.IsPlaying">
+            <summary>
+            If true, the video is playing, is not paused, and has not yet finished playing.
+            </summary>a
+        </member>
+        <member name="P:Duccsoft.VideoPanel.HasReachedEnd">
+            <summary>
+            If true, this video has reached the end of the file. If ShouldLoop is enabled, the video will
+            automatically loop.
+            </summary>
+        </member>
+        <member name="M:Duccsoft.VideoPanel.Pause">
+            <inheritdoc cref="M:Sandbox.VideoPlayer.Pause"/>
+        </member>
+        <member name="P:Duccsoft.VideoPanel.IsPaused">
+            <inheritdoc cref="P:Sandbox.VideoPlayer.IsPaused"/>
+        </member>
+        <member name="M:Duccsoft.VideoPanel.Resume">
+            <inheritdoc cref="M:Sandbox.VideoPlayer.Resume"/>
+        </member>
+        <member name="M:Duccsoft.VideoPanel.TogglePause">
+            <inheritdoc cref="M:Sandbox.VideoPlayer.TogglePause"/>
+        </member>
+        <member name="M:Duccsoft.VideoPanel.Seek(System.Single)">
+            <inheritdoc cref="M:Sandbox.VideoPlayer.Seek(System.Single)"/>
+        </member>
+        <member name="P:Duccsoft.VideoPanel.Duration">
+            <inheritdoc cref="P:Sandbox.VideoPlayer.Duration"/>
+        </member>
+        <member name="P:Duccsoft.VideoPanel.PlaybackTime">
+            <summary>
+            Returns the current playback time in seconds of the video, or if setting,
+            will seek to the specified playback time in seconds.
+            </summary>
+        </member>
+        <member name="M:Duccsoft.VideoPanel.Stop">
+            <inheritdoc cref="M:Sandbox.VideoPlayer.Stop"/>
+        </member>
+        <member name="P:Duccsoft.VideoPanel.Audio">
+            <summary>
+            Provides access to the various audio-related properties of VideoPlayer such
+            as Volume and Position.
+            </summary>
+        </member>
+        <member name="P:Duccsoft.VideoPanel.AudioSource">
+            <summary>
+            Specifies a GameObject in the world from which the audio of this video shall be emitted.
+            </summary>
+        </member>
+        <member name="M:Duccsoft.VideoPanel.PlayVideo">
+            <summary>
+            Attempt to play whatever video is specified by the current VideoPath and VideoRoot.
+            </summary>
+        </member>
+        <member name="M:Duccsoft.VideoPanel.ConfigureAudio">
+            <summary>
+            By default, will ensure that a TrackingAudioAccessor is created and
+            configured to use the VideoPlayer and AudioSource of this VideoPanel.
+            <br/><br/>
+            Called in PlayVideo after a video is loaded, but before OnPostVideoLoad.
+            </summary>
+        </member>
+        <member name="M:Duccsoft.VideoPanel.UpdateBackgroundImage">
+            <summary>
+            By default, sets the background image of this panel to VideoTexture and rebuilds the UI.
+            <br/><br/>
+            Called in PlayVideo after a video is loaded, but before OnPostVideoLoad.
+            </summary>
+        </member>
+        <member name="M:Duccsoft.VideoPanel.LoadVideo(System.Threading.CancellationToken)">
+            <summary>
+            Load whatever video is specified by the current VideoPath and VideoRoot, returning
+            an instance of a VideoPlayer. Called during PlayVideo.
+            </summary>
+        </member>
+        <member name="M:Duccsoft.VideoPanel.DetectAndHandleLoop">
+            <summary>
+            By default, detects whether the video has reached its conclusion. 
+            If so, and if ShouldLoop is true, the playback time will be 
+            set to the start of the video.
+            </summary>
+        </member>
+        <member name="T:Duccsoft.VideoRoot">
+            <summary>
+            Specifies the root directory of video path.
+            </summary>
+        </member>
+        <member name="F:Duccsoft.VideoRoot.MountedFileSystem">
+            <summary>
+            Video path is relative to FileSystem.Mounted
+            </summary>
+        </member>
+        <member name="F:Duccsoft.VideoRoot.DataFileSystem">
+            <summary>
+            Video path is relative to FileSystem.Data
+            </summary>
+        </member>
+        <member name="F:Duccsoft.VideoRoot.OrganizationDataFileSystem">
+            <summary>
+            Video path is relative to FileSystem.OrganizationData
+            </summary>
+        </member>
+        <member name="F:Duccsoft.VideoRoot.WebStream">
+            <summary>
+            Video path is a URL to an video stream on the internet. This should be
+            a direct link to the stream itself.
+            <br/><br/>
+            To manually test whether a stream is valid, you can use the Open Network Stream 
+            feature of VLC Media Player, but not every stream that plays in VLC will work here.
+            </summary>
+        </member>
+        <member name="M:Duccsoft.VideoRootExtensions.AsFileSystem(Duccsoft.VideoRoot)">
+            <summary>
+            Returns the file system associated with the given VideoRoot, or null if 
+            no file system exists.
+            </summary>
+        </member>
+    </members>
+</doc>

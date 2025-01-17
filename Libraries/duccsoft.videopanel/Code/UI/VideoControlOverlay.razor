@@ -1,0 +1,18 @@
+﻿@using Sandbox.UI;
+@namespace Duccsoft
+@inherits Panel
+
+<root class=@OverlayClass>
+    <image id="spinner" src="ui/img/BufferingCircle.png"/>
+    <div id="bottomBar">
+        <div class="button symbol" onclick=@TogglePause>@PlayButtonIcon</div>
+        <div id="timecodeArea" class=@TimecodeAreaClass>
+            <div class="progress time">@ProgressText</div>
+            <div class="progress center">/</div>
+            <div class="progress time right">@DurationText</div>
+        </div>
+        <SliderControl id="progressBar" Min=@(0) Max=@DurationSeconds 
+            Value:bind=@PlaybackTime OnValueChanged=@ProgressBarChanged ShowValueTooltip=@false/>
+        <div class="button symbol" onclick=@ToggleMute>@VolumeButtonIcon</div>
+    </div>
+</root>

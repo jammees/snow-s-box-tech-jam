@@ -1,0 +1,40 @@
+@using Duccsoft;
+@using Sandbox.UI
+@inherits PanelComponent
+@namespace Sandbox
+
+<root>
+	<div @ref="IntroPanelContainer" class="video-container">
+		<VideoPanel
+			@ref="IntroPanel"
+			VideoPath="videos/splashscreen_nogreen.mp4"
+			width="@( Panel.Box.Rect.Width * 2 )"
+			height="@( Panel.Box.Rect.Height * 2 )"
+			ShouldLoop="@false"
+			StartMuted="@false"/>
+	</div>
+</root>
+
+@code
+{
+	private VideoPanel IntroPanel { get; set; }
+	private Panel IntroPanelContainer { get; set; }
+
+	protected override async void OnTreeBuilt()
+	{
+		if ( IntroPanel.IsLoading || !IntroPanel.HasReachedEnd ) return;
+		
+		IntroPanelContainer.AddClass( "hide" );
+
+		await GameTask.DelayRealtimeSeconds( 0.8f );
+
+		Scene.LoadFromFile( "scenes/terrain.scene" );
+	}
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine(
+		IntroPanel.HasReachedEnd
+	);
+}

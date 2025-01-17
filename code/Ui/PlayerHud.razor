@@ -1,0 +1,56 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Sandbox
+
+<root>
+	@if ( Player.ThirdPerson is false )
+	{
+		<div class="crosshair"/>
+	}
+
+	<div class="input-hints-container">
+		@if ( ShowReturnHint )
+		{
+			<InputHint Action="Return" Label="Return"/>
+		}
+
+		<InputHint Action="View" Label="Change perspective"/>
+
+		@if ( IsHoldingObject )
+		{
+			<InputHint Action="attack2" Label="Freeze object"/>
+		}
+
+		@if ( IsLookingAtObject || IsHoldingObject )
+		{
+			<InputHint Action="attack1" Label="Grab object (Hold)"/>
+		}
+	</div>
+</root>
+
+@code
+{
+	[Property]
+    private Pickup PickupComponent { get; set; }
+	
+	[Property]
+	private bool ShowReturnHint { get; set; }
+	
+	[Property]
+	private PlayerController Player { get; set; }
+
+	private bool IsLookingAtObject => PickupComponent.LookedObject is not null;
+	private bool IsHoldingObject => PickupComponent.HeldObject is not null;
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine(
+		Input.UsingController,
+		PickupComponent.LookedObject,
+		PickupComponent.HeldObject,
+		ShowReturnHint,
+		Player.ThirdPerson
+	);
+}

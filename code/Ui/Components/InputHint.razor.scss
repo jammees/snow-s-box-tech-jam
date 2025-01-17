@@ -1,0 +1,23 @@
+InputHint {
+	background-color: rgba(black, 0.7);
+	backdrop-filter: blur(25);
+	border-radius: 10px;
+	gap: 15px;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 5px;
+	padding-right: 10px;
+
+	> img {
+		background-size: contain;
+		background-repeat: no-repeat;
+		max-height: 58px;
+		max-width: 58px;
+	}
+
+	> label {
+		color: white;
+		font-family: Poppins;
+		font-size: 25px;
+	}
+}

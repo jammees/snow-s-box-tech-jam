@@ -1,0 +1,29 @@
+PlayerHud
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	
+	> .crosshair
+	{
+		background-color: white;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 7px;
+		height: 7px;
+		border-radius: 100%;
+	}
+	
+	> .input-hints-container
+	{
+		position: absolute;
+		bottom: 50px;
+		right: 50px;
+		flex-direction: column;
+		gap: 10px;
+	}
+}

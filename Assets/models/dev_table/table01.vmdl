@@ -47,26 +47,49 @@
 				children = 
 				[
 					{
-						_class = "PhysicsMeshFile"
-						name = "Table01"
+						_class = "PhysicsShapeBox"
 						parent_bone = ""
-						surface_prop = "default"
+						surface_prop = "wood"
 						collision_tags = "solid"
-						recenter_on_parent_bone = false
-						offset_origin = [ 0.0, 0.0, 0.0 ]
-						offset_angles = [ 0.0, 0.0, 0.0 ]
-						align_origin_x_type = "None"
-						align_origin_y_type = "None"
-						align_origin_z_type = "None"
-						filename = "models/dev_table/Table01.fbx"
-						import_scale = 12.0
-						maxMeshVertices = 0
-						qemError = 0.0
-						import_filter = 
-						{
-							exclude_by_default = false
-							exception_list = [  ]
-						}
+						origin = [ -0.056678, 0.046298, 28.408369 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 48.114143, 84.279007, 4.520896 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "wood"
+						collision_tags = "solid"
+						origin = [ 22.038689, -39.979782, 13.171424 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 3.103603, 3.092308, 26.066263 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "wood"
+						collision_tags = "solid"
+						origin = [ -21.9613, -39.979801, 13.1714 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 3.103603, 3.092308, 26.066263 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "wood"
+						collision_tags = "solid"
+						origin = [ -21.9613, 40.020199, 13.1714 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 3.103603, 3.092308, 26.066263 ]
+					},
+					{
+						_class = "PhysicsShapeBox"
+						parent_bone = ""
+						surface_prop = "wood"
+						collision_tags = "solid"
+						origin = [ 22.0387, 40.020199, 13.1714 ]
+						angles = [ 0.0, 0.0, 0.0 ]
+						dimensions = [ 3.103603, 3.092308, 26.066263 ]
 					},
 				]
 			},

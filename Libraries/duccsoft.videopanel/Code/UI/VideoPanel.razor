@@ -1,0 +1,10 @@
+﻿@using Sandbox.UI;
+@namespace Duccsoft
+@inherits Panel
+
+<root class="video-texture">
+    @if ( ShowControls )
+    {
+        <VideoControlOverlay VideoPanel=@this AutoHide=@AutoHideControls AutoHideDelay=@AutoHideDelay/>
+    }
+</root>

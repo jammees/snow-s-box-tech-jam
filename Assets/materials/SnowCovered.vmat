@@ -2,8 +2,9 @@
 
 Layer0
 {
-	shader "shaders/snowcovered.shader"
+	shader "shaders/snow_covered/snowcovered.shader"
 
+	heightmap "materials/snow_material/snow_heightmap.png"
 	Mat_Color "models/dev_table/table01_color.png"
 	Mat_Normal "models/dev_table/table01_normal.png"
 	Snow_Color "materials/snow_material/snow010a_1k-jpg_color.jpg"
@@ -11,4 +12,8 @@ Layer0
 
 	//---- Fog ----
 	g_bFogEnabled "1"
+
+	//---- Snow ----
+	g_flheightmap_normal_strength "15.000"
+	g_flheightmap_strength "15.000"
 }

@@ -1,0 +1,15 @@
+{
+  "AlbedoImage": "materials/snow_material/snow010a_1k-jpg_color.jpg",
+  "RoughnessImage": "materials/snow_material/snow010a_1k-jpg_rough.jpg",
+  "NormalImage": "materials/snow_material/snow010a_1k-jpg_normal.jpg",
+  "HeightImage": "materials/default/default_ao.tga",
+  "AOImage": "materials/snow_material/snow010a_1k-jpg_ao.jpg",
+  "UVScale": 8,
+  "UVRotation": 0,
+  "Metalness": 0,
+  "NormalStrength": 1,
+  "HeightBlendStrength": 1,
+  "Surface": "sounds/snow.surface",
+  "__references": [],
+  "__version": 0
+}

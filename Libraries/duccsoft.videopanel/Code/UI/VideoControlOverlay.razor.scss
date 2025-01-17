@@ -1,0 +1,150 @@
+﻿@keyframes pop-up {
+    from {
+        opacity: 0;
+        transform: translateY( 100% );
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY( 0% );
+    }
+}
+
+@keyframes hide {
+    from {
+        opacity: 1;
+        transform: translateY( 0% );
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY( 100% );
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate( 0deg );
+    }
+
+    to {
+        transform: rotate( 360deg );
+    }
+}
+
+VideoControlOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    > #spinner {
+        display: none;
+    }
+
+    &.loading > #spinner {
+        display: flex;
+        position: absolute;
+        left: 30%;
+        top: 30%;
+        width: 40%;
+        height: 40%;
+        animation: spin 1s infinite;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &.conceal > #bottomBar {
+        transform: translateY( 100% );
+        opacity: 0;
+        animation: hide 0.08s;
+    }
+
+    > #bottomBar {
+        position: absolute;
+        bottom: 0%;
+        width: 100%;
+        align-items: center;
+        padding: 5px;
+        font-family: Poppins;
+        background-color: #000000FC;
+        color: #FFFFFFF0;
+
+        transform: translateY( 0% );
+        opacity: 1;
+        animation: pop-up 0.08s;
+
+        .button {
+            border: 1px solid #FFFFFF02;
+            border-radius: 5px;
+            padding: 5px;
+            background-color: #000E;
+
+            &:hover {
+                background-color: #222E;
+            }
+
+            &:active {
+                transform: scale(0.98);
+            }
+        }
+
+        .symbol {
+            font-size: 32px;
+            font-family: Material Icons;
+        }
+
+        > * {
+            margin: 0px 5px;
+        }
+
+        #timecodeArea {
+            position: relative;
+            width: 20%;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+
+            &.big {
+                width: 22.5%;
+            }
+
+            .progress {
+                flex-wrap: nowrap;
+                align-items: center;
+
+                &.time {
+                    min-width: 10%;
+                }
+
+                &.right {
+                    justify-content: flex-end;
+                }
+            }
+        }
+
+        #progressBar {
+
+            .inner {
+                justify-content: center;
+                min-height: 0px;
+
+                .track {
+                    height: 14px;
+                    margin: 0px;
+
+                    .thumb {
+                        height: 14px;
+                        width: 14px;
+                    }
+                }
+            }
+
+            .value-tooltip {
+                // Only required because SliderControl.ShowValueTooltip isn't hooked up to anything.
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits Panel
+@attribute [StyleSheet]
+
+<root>
+	<img @ref="_glyph" />
+	<label>@(Label is null ? Action : Label)</label>
+</root>
+
+@code
+{
+	public string Action { get; set; }
+	public string Label { get; set; }
+
+	Image _glyph { get; set; }
+
+	protected override void OnAfterTreeRender(bool firstTime)
+	{
+		var texture = Input.GetGlyph(Action, InputGlyphSize.Medium, true);
+		if (texture is null || _glyph is null) return;
+		_glyph.Texture = texture;
+	}
+
+	protected override int BuildHash() => System.HashCode.Combine(Action, Label, Input.UsingController);
+}

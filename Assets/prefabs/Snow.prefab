@@ -1,0 +1,78 @@
+{
+  "RootObject": {
+    "__guid": "ff684ae1-9939-413d-ab94-a5e8324bcd26",
+    "Flags": 0,
+    "Name": "Snow (1)",
+    "Scale": "1,1,5",
+    "Tags": "snow",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "SnowHandler",
+        "__guid": "8104df7a-6148-48bc-97da-707d800bc41a",
+        "RenderModel": "models/snow_mesh/snow_mesh_high.vmdl",
+        "SnowCamera": {
+          "_type": "component",
+          "component_id": "427049f8-6460-4226-85b4-42783726b71f",
+          "go": "9dad70bb-f4c0-4c00-8e69-38e7dcd045e6",
+          "component_type": "CameraComponent"
+        }
+      },
+      {
+        "__type": "Sandbox.Snow.SnowQualityHandler",
+        "__guid": "16e6a19b-e1f4-46b3-ad1c-317f657a3fd9",
+        "HighModel": "models/snow_mesh/snow_mesh_high.vmdl",
+        "LowModel": "models/snow_mesh/snow_mesh_low.vmdl",
+        "MedModel": "models/snow_mesh/snow_mesh_med.vmdl",
+        "SnowHandler": {
+          "_type": "component",
+          "component_id": "8104df7a-6148-48bc-97da-707d800bc41a",
+          "go": "ff684ae1-9939-413d-ab94-a5e8324bcd26",
+          "component_type": "SnowHandler"
+        }
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "9dad70bb-f4c0-4c00-8e69-38e7dcd045e6",
+        "Flags": 0,
+        "Name": "Camera",
+        "Position": "0,0,-2.216771",
+        "Rotation": "0.00000002980232,-0.7071067,0.00000002980232,0.7071067",
+        "Tags": "maincamera",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.CameraComponent",
+            "__guid": "427049f8-6460-4226-85b4-42783726b71f",
+            "BackgroundColor": "0,0,0,1",
+            "ClearFlags": "All",
+            "FieldOfView": 46.02,
+            "IsMainCamera": false,
+            "Orthographic": true,
+            "OrthographicHeight": 1007.7,
+            "Priority": 1,
+            "RenderExcludeTags": "",
+            "RenderTags": "snowcollider",
+            "TargetEye": "None",
+            "Viewport": "0,0,1,1",
+            "ZFar": 27,
+            "ZNear": 1
+          },
+          {
+            "__type": "Sandbox.Blur",
+            "__guid": "4136f01b-ae68-40f2-a03b-7cb29fbb44ad",
+            "Size": 0
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}
