@@ -142,13 +142,7 @@
           "OnComponentEnabled": null,
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "SnowHandler": {
-            "_type": "component",
-            "component_id": "1125f0dc-1b96-4dc7-84c4-c61c0d9d300f",
-            "go": "61e65723-ada3-4907-a8aa-b6c7af1cc388",
-            "component_type": "SnowTerrainHandler"
-          }
+          "OnComponentUpdate": null
         }
       ]
     },
@@ -1001,7 +995,7 @@
           "BodyGroups": 18446744073709551615,
           "CreateAttachments": false,
           "MaterialGroup": null,
-          "MaterialOverride": null,
+          "MaterialOverride": "materials/default.vmat",
           "Model": "models/dev/plane.vmdl",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
