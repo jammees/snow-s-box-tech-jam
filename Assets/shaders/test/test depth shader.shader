@@ -10,7 +10,7 @@ MODES
 {
     VrForward();
     Depth();
-    ToolsVis( S_MODE_TOOLS_VIS );
+    Default();
 }
 
 COMMON
@@ -44,10 +44,13 @@ PS
 {
     #include "common/pixel.hlsl"
     
-    Texture2D g_tDepth < Attribute("T"); >;
+    Texture2DMS<float> g_tDepth < Attribute( "Screen" ); SrgbRead( false ); >;
 
 	float4 MainPs( PixelInput i ) : SV_Target0
 	{
-		return g_tDepth.Sample( g_sAniso, i.vTextureCoords.xy ).r;
+	    float2 invertedUv = float2( 1.0 - i.vTextureCoords.x, i.vTextureCoords.y );
+	    invertedUv *= 1024.0;
+	
+		return g_tDepth.Load( uint2( invertedUv ), 0 );
 	}
 }
