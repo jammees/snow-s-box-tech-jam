@@ -129,7 +129,7 @@ PS
     #include "common/shadingmodel.hlsl"
 
     #include "terrain/TerrainNoTile.hlsl"
-
+    
     float HeightBlend( float h1, float h2, float c1, float c2, out float ctrlHeight )
     {
         float h1Prefilter = h1 * sign( c1 );
@@ -302,7 +302,7 @@ PS
 
         // custom
         Texture2D snowMaskTexture = Bindless::GetTexture2D( g_bSnowTerrain[0].SnowMaskIndex );
-        float snowMask = snowMaskTexture.Sample( g_sAniso, uv ).r;
+        float snowMask = tSnowMask.Sample( g_sPointClamp, uv ).r;
         //
 
         Material p = Material::Init();
