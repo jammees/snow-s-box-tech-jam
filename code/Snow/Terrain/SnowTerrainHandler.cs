@@ -144,6 +144,7 @@ public sealed class SnowTerrainHandler : Component
 			Instance._debugMode = value;
 		}
 	}
+
 	private int _debugMode;
 
 	[ConCmd("snow_terrain_reset")]
@@ -187,10 +188,10 @@ public sealed class SnowTerrainHandler : Component
 		
 		// renderhook
 		// please Garry do not remove this, or at least allow CommandLists to
-		// execute callbacks
+		// grab the depth too
 		RenderHook = SnowCamera.AddHookAfterTransparent( "SnowGetCameraDepth", 0, _ =>
 		{
-			Graphics.GrabDepthTexture( "Screen", SnowAttributes );
+			Graphics.GrabDepthTexture( "Depth", SnowAttributes );
 		} );
 	}
 
@@ -270,13 +271,7 @@ public sealed class SnowTerrainHandler : Component
 		SnowAttributes.Set( "Heightmap", TerrainHeight );
 		SnowAttributes.Set( "Controlmap", TerrainControl );
 		SnowAttributes.Set( "SnowHeight", SnowHeight );
-		// SnowAttributes.Set( "CameraFarZ", SnowCamera.ZFar + SnowHeight ); // don't ask dunno how this works
-		// SnowAttributes.Set( "CameraFarZ", SnowCamera.ZFar ); // don't ask dunno how this works
 		SnowAttributes.Set( "TerrainHeight", Terrain.Storage.TerrainHeight );
-		
-		// Log.Info( $"SnowHeight: {SnowAttributes.GetFloat( "SnowHeight" )}" );
-		// Log.Info( $"CameraFarZ: {SnowAttributes.GetFloat( "CameraFarZ" )}" );
-		// Log.Info( $"TerrainHeight: {SnowAttributes.GetFloat( "TerrainHeight" )}" );
 	}
 	
 	private void DisposeTextures()
@@ -316,7 +311,6 @@ public sealed class SnowTerrainHandler : Component
 		
 		// create render target
 		SnowRenderTarget = Texture.CreateRenderTarget( )
-			.WithUAVBinding()
 			.WithFormat( ImageFormat.RGBA8888 )
 			.WithSize( new Vector2( TextureSize, TextureSize ) )
 			.Create();
