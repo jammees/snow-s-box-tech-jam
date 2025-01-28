@@ -23,13 +23,13 @@ public sealed class SnowTerrainCommands: Component
 	{
 		get
 		{
-			if ( Instance.Objects is null ) return false;
+			if ( Instance is null ) return false;
 
 			return Instance.Objects.Enabled;
 		}
 		set
 		{
-			if ( Instance.Objects is null ) return;
+			if ( Instance is null ) return;
 
 			Instance.Objects.Enabled = value;
 		}
