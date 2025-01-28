@@ -15,12 +15,12 @@ CS
 	#include "system.fxc"
 
     // destination
-	RWTexture2D<float4> g_tMask < Attribute( "Mask" ); >;
+	RWTexture2D<float4> g_tMask < Attribute( "Mask" ); Filter( Point ); AddressU( Clamp ); AddressV( Clamp ); >;
 
     // controls
-    Texture2D<float> g_tScreen < Attribute( "Screen" ); >;
-    Texture2D<float> g_tHeightmap < Attribute( "Heightmap" ); >;
-    Texture2D<float4> g_tControlmap < Attribute( "Controlmap" ); >;
+    Texture2DMS<float> g_tDepth < Attribute( "Depth" ); Filter( Point ); AddressU( Clamp ); AddressV( Clamp ); >;
+    Texture2D<float> g_tHeightmap < Attribute( "Heightmap" ); Filter( Point ); AddressU( Clamp ); AddressV( Clamp ); >;
+    Texture2D<float4> g_tControlmap < Attribute( "Controlmap" ); Filter( Point ); AddressU( Clamp ); AddressV( Clamp ); >;
 
     // other random stuffs
     float g_fSnowHeight < Attribute("SnowHeight"); >;
@@ -32,7 +32,7 @@ CS
 // 	void MainCs( uint3 id : SV_DispatchThreadID )
 // 	{
 //         float maskValue = g_tMask[id.xy];
-//         float depthValue = g_tScreen[id.xy];
+//         float depthValue = g_tDepth[id.xy];
 //         float heightValue = g_tHeightmap[id.xy];
 // 
 //         // create control mask
@@ -55,7 +55,7 @@ CS
 // 	[numthreads( 8, 8, 1 )]
 // 	void MainCs( uint3 id : SV_DispatchThreadID )
 // 	{
-//         float depth = 1.0 - g_tScreen[ id.xy ];
+//         float depth = 1.0 - g_tDepth[ id.xy ];
 //         depth = RemapValClamped(depth, 0.0, 1.0, 0, g_fCameraFarZ);
 //         
 //         float height = g_tHeightmap[id.xy];
@@ -84,9 +84,9 @@ CS
     [numthreads( 8, 8, 1 )]
     void MainCs( uint3 id : SV_DispatchThreadID )
     {
-        float depth = 1.0 - g_tScreen[ id.xy ];
+        float depth = 1.0 - g_tDepth.Load( id.xy, 0 );
         depth = RemapValClamped(depth, 0.0, 1.0, 0, g_fTerrainHeight + g_fSnowHeight * 2);
-
+        
         float height = g_tHeightmap[id.xy];
 
         // correction
