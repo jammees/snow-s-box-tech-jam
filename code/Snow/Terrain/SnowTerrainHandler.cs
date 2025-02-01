@@ -186,9 +186,6 @@ public sealed class SnowTerrainHandler : Component
 		
 		CreateTextures();
 		
-		// renderhook
-		// please Garry do not remove this, or at least allow CommandLists to
-		// grab the depth too
 		RenderHook = SnowCamera.AddHookAfterTransparent( "SnowGetCameraDepth", 0, _ =>
 		{
 			Graphics.GrabDepthTexture( "Depth", SnowAttributes );
