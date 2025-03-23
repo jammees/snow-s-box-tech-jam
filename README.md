@@ -1,8 +1,22 @@
+<div align="center">
+  <img src="./Misc/dst_thumb_long.png">
+</div>
+
 # Dynamic Snow Terrain
 
 This project was submitted for the [S&box Tech Jam](https://sbox.game/c/tech1)
 
 <br>
+
+## Showcase:
+
+<div align="center">
+  <img src="./Misc/showcase_1.png">
+  <img src="./Misc/showcase_2.png">
+  <img src="./Misc/showcase_3.png">
+  <img src="./Misc/showcase_4.png">
+  <img src="./Misc/showcase_5.png">
+</div>
 
 ### To adapt this a couple things should be considered:
 
