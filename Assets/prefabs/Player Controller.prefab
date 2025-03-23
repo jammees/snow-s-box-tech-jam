@@ -22,6 +22,7 @@
         "AimStrengthBody": 1,
         "AimStrengthEyes": 1,
         "AimStrengthHead": 1,
+        "AirFriction": 0.1,
         "AltMoveButton": "run",
         "Body": {
           "_type": "component",
@@ -201,6 +202,7 @@
               "vectors": {},
               "rotations": {}
             },
+            "PlaybackRate": 1,
             "RenderOptions": {
               "GameLayer": true,
               "OverlayLayer": false,
@@ -302,6 +304,7 @@
             "Opacity": 1,
             "Scale": 1,
             "ScaleStrategy": "ConsistentHeight",
+            "TargetCamera": null,
             "ZIndex": 100
           },
           {
@@ -326,6 +329,39 @@
               "component_type": "PlayerController"
             },
             "ShowReturnHint": false
+          }
+        ]
+      },
+      {
+        "__guid": "32d27e51-f158-4db2-963b-fc47a0e3fda6",
+        "Flags": 0,
+        "Name": "Camera",
+        "Tags": "maincamera",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.CameraComponent",
+            "__guid": "358d579e-b726-4894-b379-0b361fbf97c7",
+            "BackgroundColor": "0.33333,0.46275,0.52157,1",
+            "ClearFlags": "All",
+            "FieldOfView": 60,
+            "FovAxis": "Horizontal",
+            "IsMainCamera": true,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "Orthographic": false,
+            "OrthographicHeight": 1204,
+            "Priority": 1,
+            "RenderExcludeTags": "",
+            "RenderTags": "",
+            "TargetEye": "None",
+            "Viewport": "0,0,1,1",
+            "ZFar": 10000,
+            "ZNear": 10
           }
         ]
       }
