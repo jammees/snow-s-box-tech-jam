@@ -1,0 +1,23 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Sandbox
+
+<root @ref="TransitionPanel">
+</root>
+
+@code
+{
+	Panel TransitionPanel { get; set; }
+	
+	protected override async void OnTreeFirstBuilt()
+	{
+		await GameTask.DelayRealtimeSeconds( 0.2f );
+		
+		TransitionPanel.AddClass( "hide" );
+
+		await GameTask.DelayRealtimeSeconds( 1f );
+		
+		DestroyGameObject();
+	}
+}
