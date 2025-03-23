@@ -1,4 +1,5 @@
 @using Duccsoft;
+@using Sandbox.Audio
 @using Sandbox.UI
 @inherits PanelComponent
 @namespace Sandbox
@@ -11,7 +12,8 @@
 			width="@( Panel.Box.Rect.Width )"
 			height="@( Panel.Box.Rect.Height )"
 			ShouldLoop="@false"
-			StartMuted="@false"/>
+			StartMuted="@false"
+			TargetMixer="@Mixer.Master.GetChildren()[3]"/>
 	</div>
 </root>
 
@@ -27,7 +29,7 @@
 		IntroPanelContainer.AddClass( "hide" );
 
 		await GameTask.DelayRealtimeSeconds( 0.8f );
-
+		
 		Scene.LoadFromFile( "scenes/terrain.scene" );
 	}
 
