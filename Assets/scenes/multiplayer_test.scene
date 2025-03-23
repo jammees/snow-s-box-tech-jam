@@ -131,46 +131,321 @@
       ]
     },
     {
-      "__guid": "79c4c624-4427-4361-a5a2-ba41b75657e7",
+      "__guid": "c2ce218a-f70a-4945-9a53-d88097bccfdb",
       "Flags": 0,
-      "Name": "Camera",
-      "Position": "-217.4333,-234.2223,175.0966",
-      "Tags": "maincamera",
+      "Name": "Spawnpoint",
+      "Position": "-57.69868,-6.878775,39.58086",
       "Enabled": true,
       "Components": [
         {
-          "__type": "Sandbox.CameraComponent",
-          "__guid": "f11bf68d-92ad-48bf-ae4d-b2126b344adf",
-          "BackgroundColor": "0.33333,0.46275,0.52157,1",
-          "ClearFlags": "All",
-          "FieldOfView": 60,
-          "IsMainCamera": true,
+          "__type": "Sandbox.NetworkHelper",
+          "__guid": "f79b8c74-0eef-4019-a835-03809fa0b192",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
-          "Orthographic": false,
-          "OrthographicHeight": 1204,
-          "Priority": 1,
-          "RenderExcludeTags": "",
-          "RenderTags": "",
-          "TargetEye": "None",
-          "Viewport": "0,0,1,1",
-          "ZFar": 10000,
-          "ZNear": 10
+          "PlayerPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/player controller.prefab"
+          },
+          "SpawnPoints": [
+            {
+              "_type": "gameobject",
+              "go": "c2ce218a-f70a-4945-9a53-d88097bccfdb"
+            }
+          ],
+          "StartServer": true
+        },
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "131f7368-6068-450e-aa87-413785549910",
+          "Color": "0.8902,0.31765,0.05098,1",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
         }
       ]
     },
     {
-      "__guid": "09ff66f1-bbe7-4bf0-9820-b476e876a79b",
+      "__guid": "5fc9eaef-7ead-4d36-887c-cd29d37b0b2b",
       "Flags": 0,
-      "Name": "multiplayerspawner",
-      "Position": "-2.722557,-3.891418,97.22862",
+      "Name": "Box",
+      "Position": "201.5035,0,14.08713",
+      "Tags": "snowcollider",
       "Enabled": true,
-      "__Prefab": "prefabs/multiplayerspawner.prefab",
-      "__PrefabVariables": {}
+      "NetworkOrphaned": 1,
+      "OwnerTransfer": 0,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "861039f9-6871-42b8-b1f3-f33559d8948e",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "71cea479-3d3a-4f74-86fe-e4ea5071e649",
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "7c10ffe5-071c-4880-8c37-4382bb076e0d",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {
+            "X": false,
+            "Y": false,
+            "Z": false,
+            "Pitch": false,
+            "Yaw": false,
+            "Roll": false
+          },
+          "MassCenterOverride": "0,0,0",
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OverrideMassCenter": false,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        },
+        {
+          "__type": "PreventOob",
+          "__guid": "1d2ac75b-145b-45f7-96f6-9960501d971f",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
+        }
+      ]
+    },
+    {
+      "__guid": "6fda51b3-6146-495b-ab6d-24c118470c55",
+      "Flags": 0,
+      "Name": "Box (1)",
+      "Position": "301.8168,0,14.08713",
+      "Tags": "snowcollider",
+      "Enabled": true,
+      "NetworkOrphaned": 1,
+      "OwnerTransfer": 0,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "be3cb5fd-f655-4095-8259-473d634d30c9",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "8618d6f0-4635-45a3-8f76-cd780afd0524",
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "b8d7aa80-884c-4980-b3af-99e034ce2616",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {
+            "X": false,
+            "Y": false,
+            "Z": false,
+            "Pitch": false,
+            "Yaw": false,
+            "Roll": false
+          },
+          "MassCenterOverride": "0,0,0",
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OverrideMassCenter": false,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        },
+        {
+          "__type": "PreventOob",
+          "__guid": "f1fb0721-4972-45f1-9b12-687935a7da92",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
+        }
+      ]
+    },
+    {
+      "__guid": "f8ee8b35-92a6-41ab-a35f-e4c48e62ea94",
+      "Flags": 0,
+      "Name": "Box (2)",
+      "Position": "382.5519,0,14.08713",
+      "Tags": "snowcollider",
+      "Enabled": true,
+      "NetworkOrphaned": 1,
+      "OwnerTransfer": 0,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "aec19ee8-abd1-4ef8-900b-314e6f43567d",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "8bce637d-093e-4fb5-b391-b6cd8e16bc5f",
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "b4722701-f58a-4046-bd06-7b7a3260ab47",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {
+            "X": false,
+            "Y": false,
+            "Z": false,
+            "Pitch": false,
+            "Yaw": false,
+            "Roll": false
+          },
+          "MassCenterOverride": "0,0,0",
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OverrideMassCenter": false,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        },
+        {
+          "__type": "PreventOob",
+          "__guid": "f77dbf38-258c-4018-81a5-d47b90cd41a4",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -199,6 +474,8 @@
   "ResourceVersion": 2,
   "Title": null,
   "Description": null,
-  "__references": [],
+  "__references": [
+    "facepunch.wooden_crate#29138"
+  ],
   "__version": 2
 }
