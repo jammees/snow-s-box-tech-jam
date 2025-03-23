@@ -1,0 +1,221 @@
+{
+  "__guid": "2dc19054-1975-41be-a627-a8c7616301f4",
+  "GameObjects": [
+    {
+      "__guid": "587ad3bd-bfd8-4a81-93fd-de961e916dd2",
+      "Flags": 0,
+      "Name": "Sun",
+      "Position": "-1642.326,0.8931298,225.0204",
+      "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
+      "Tags": "light_directional,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.DirectionalLight",
+          "__guid": "7e775854-9abe-411f-b0f8-491dbc5e8710",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.94419,0.97767,1,1",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Shadows": true,
+          "SkyColor": "0.2532,0.32006,0.35349,1"
+        }
+      ]
+    },
+    {
+      "__guid": "4845f01c-bbf5-4ac6-b884-670629b2eca5",
+      "Flags": 0,
+      "Name": "2D Skybox",
+      "Position": "-1690.515,-135.7507,115.6445",
+      "Tags": "skybox",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SkyBox2D",
+          "__guid": "976b11c2-39de-4d56-a3e4-766971ace1cb",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "SkyIndirectLighting": false,
+          "SkyMaterial": "materials/skybox/skybox_day_01.vmat",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.EnvmapProbe",
+          "__guid": "c559a1ab-ce89-4552-831e-a8aae2cab6c9",
+          "Bounds": {
+            "Mins": "-512,-512,-512",
+            "Maxs": "512,512,512"
+          },
+          "DelayBetweenUpdates": 0.1,
+          "Feathering": 0.02,
+          "FrameInterval": 5,
+          "MaxDistance": 512,
+          "MultiBounce": false,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Projection": "Sphere",
+          "RenderDynamically": false,
+          "Texture": "textures/cubemaps/default2.vtex",
+          "TintColor": "1,1,1,1",
+          "UpdateStrategy": "OnEnabled",
+          "ZFar": 4096,
+          "ZNear": 16
+        }
+      ]
+    },
+    {
+      "__guid": "e5854105-0a79-4005-9b20-d2521ce64805",
+      "Flags": 0,
+      "Name": "Terrain",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.Terrain",
+          "__guid": "318c2166-c91f-417f-b9bc-e930ab194301",
+          "__version": 1,
+          "ClipMapLodExtentTexels": 256,
+          "ClipMapLodLevels": 6,
+          "EnableCollision": true,
+          "Friction": null,
+          "IsTrigger": false,
+          "MaterialOverride": "shaders/terrain_snow/snow_terrain_material.vmat",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RenderType": "Off",
+          "Static": true,
+          "Storage": "terrain/snow_terrain_data.terrain",
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0",
+          "TerrainHeight": 4000,
+          "TerrainSize": 10000
+        },
+        {
+          "__type": "Sandbox.Snow.Terrain.SnowTerrainHandler",
+          "__guid": "9edc2d96-c97a-4386-ba77-38acf81e7381",
+          "FirstPassShader": "shaders/terrain_snow/snow_terrain_mask.shader",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderTags": "snowcollider",
+          "SecondPassShader": "shaders/terrain_snow/snow_terrain_mask_blur.shader",
+          "SnowHeight": 20,
+          "Terrain": {
+            "_type": "component",
+            "component_id": "318c2166-c91f-417f-b9bc-e930ab194301",
+            "go": "e5854105-0a79-4005-9b20-d2521ce64805",
+            "component_type": "Terrain"
+          }
+        },
+        {
+          "__type": "Sandbox.Snow.Terrain.SnowTerrainCommands",
+          "__guid": "304a6069-e5c6-4886-8f71-927ad49db045",
+          "__enabled": false,
+          "Objects": null,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
+        }
+      ]
+    },
+    {
+      "__guid": "77429e22-11bf-46fa-a442-0f2e424dfb38",
+      "Flags": 0,
+      "Name": "player controller",
+      "Position": "2835.637,230.0741,2468.292",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Enabled": true,
+      "__Prefab": "prefabs/player controller.prefab",
+      "__PrefabVariables": {
+        "Show Return Hint": false
+      }
+    },
+    {
+      "__guid": "a5cc6ded-c8fe-4e25-802f-de76efadeb87",
+      "Flags": 0,
+      "Name": "Camera",
+      "Position": "2786.269,297.0909,2451.778",
+      "Tags": "maincamera",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.CameraComponent",
+          "__guid": "b01e8125-1cd6-42c3-8123-545900518863",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 60,
+          "IsMainCamera": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 5,
+          "RenderExcludeTags": "ignore",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 10
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "NetworkInterpolation": true,
+    "PhysicsSubSteps": 1,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "Metadata": {},
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "ResourceVersion": 2,
+  "Title": null,
+  "Description": null,
+  "__references": [],
+  "__version": 2
+}
