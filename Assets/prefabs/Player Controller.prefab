@@ -165,6 +165,23 @@
           "go": "6095cf6f-eee5-4af3-a4be-94fa66726bcc",
           "component_type": "PlayerController"
         }
+      },
+      {
+        "__type": "Sandbox.PlayerManager",
+        "__guid": "efe06ef9-ec43-4096-a7f4-5ffa5b669033",
+        "Camera": {
+          "_type": "component",
+          "component_id": "358d579e-b726-4894-b379-0b361fbf97c7",
+          "go": "32d27e51-f158-4db2-963b-fc47a0e3fda6",
+          "component_type": "CameraComponent"
+        },
+        "NameplateHeight": 79.90002,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null
       }
     ],
     "Children": [
