@@ -12,14 +12,66 @@
           "__type": "Sandbox.ScreenPanel",
           "__guid": "683239c8-18ac-4981-b2e5-64a2e231533d",
           "AutoScreenScale": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
           "Opacity": 1,
           "Scale": 1,
           "ScaleStrategy": "ConsistentHeight",
+          "TargetCamera": {
+            "_type": "component",
+            "component_id": "3a6969d2-47ce-4d3f-9ed9-467df60eb29b",
+            "go": "1e9879e1-a0ca-4883-9a24-1680f9257d6a",
+            "component_type": "CameraComponent"
+          },
           "ZIndex": 100
         },
         {
           "__type": "Sandbox.SplashScreen",
-          "__guid": "bf47780f-3c0e-44e0-b891-78d959fa34a3"
+          "__guid": "bf47780f-3c0e-44e0-b891-78d959fa34a3",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
+        }
+      ]
+    },
+    {
+      "__guid": "1e9879e1-a0ca-4883-9a24-1680f9257d6a",
+      "Flags": 0,
+      "Name": "Camera",
+      "Position": "2191.717,687.5196,-134.2001",
+      "Tags": "maincamera",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.CameraComponent",
+          "__guid": "3a6969d2-47ce-4d3f-9ed9-467df60eb29b",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 60,
+          "FovAxis": "Horizontal",
+          "IsMainCamera": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 10
         }
       ]
     }
