@@ -8,7 +8,7 @@
   "Resources": "\nvideos/splashscreen_nogreen.mp4",
   "PackageReferences": [],
   "EditorReferences": null,
-  "IsWhitelistDisabled": false,
+  "IsStandaloneOnly": false,
   "Metadata": {
     "MaxPlayers": 1,
     "MinPlayers": 1,
