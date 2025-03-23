@@ -26,4 +26,18 @@ PlayerHud
 		flex-direction: column;
 		gap: 10px;
 	}
+	
+	> .chat-container
+	{
+		font-family: Poppins;
+		position: absolute;
+		bottom: 50px;
+		left: 50px;
+		
+		> .textentry
+		{
+			background-color: rgba(0, 0, 0, 0.3);
+			color: white;
+		}
+	}
 }

@@ -6,26 +6,30 @@
 <root>
 	@if ( Player.ThirdPerson is false )
 	{
-		<div class="crosshair"/>
+		<div class="crosshair"></div>
 	}
 
 	<div class="input-hints-container">
 		@if ( ShowReturnHint )
 		{
-			<InputHint Action="Return" Label="Return"/>
+			<InputHint Action="Return" Label="Return"></InputHint>
 		}
 
-		<InputHint Action="View" Label="Change perspective"/>
+		<InputHint Action="View" Label="Change perspective"></InputHint>
 
 		@if ( IsHoldingObject )
 		{
-			<InputHint Action="attack2" Label="Freeze object"/>
+			<InputHint Action="attack2" Label="Freeze object"></InputHint>
 		}
 
 		@if ( IsLookingAtObject || IsHoldingObject )
 		{
-			<InputHint Action="attack1" Label="Grab object (Hold)"/>
+			<InputHint Action="attack1" Label="Grab object (Hold)"></InputHint>
 		}
+	</div>
+	
+	<div class="chat-container">
+		<TextEntry Placeholder="Enter something here..."></TextEntry>
 	</div>
 </root>
 
@@ -42,7 +46,7 @@
 
 	private bool IsLookingAtObject => PickupComponent.LookedObject is not null;
 	private bool IsHoldingObject => PickupComponent.HeldObject is not null;
-
+	
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
