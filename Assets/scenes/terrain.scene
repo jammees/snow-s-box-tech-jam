@@ -2,6 +2,41 @@
   "__guid": "95184656-859d-45f6-b310-bc42afeac292",
   "GameObjects": [
     {
+      "__guid": "4fddffda-3202-4fad-9590-1f1ba6590dd5",
+      "Flags": 0,
+      "Name": "Transition",
+      "Position": "2693.177,68.04778,2661.858",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SplashTransition",
+          "__guid": "fbde9b1d-5f1f-4cf3-84b2-8b491686a619",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
+        },
+        {
+          "__type": "Sandbox.ScreenPanel",
+          "__guid": "56e99ce4-2f0f-4ec6-a4b6-14ba70c79b2d",
+          "AutoScreenScale": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Opacity": 1,
+          "Scale": 1,
+          "ScaleStrategy": "ConsistentHeight",
+          "TargetCamera": null,
+          "ZIndex": 599
+        }
+      ]
+    },
+    {
       "__guid": "7215c1ad-45ea-4707-bff5-b55e2dab23b4",
       "Flags": 0,
       "Name": "Sun",
@@ -730,6 +765,7 @@
                 "vectors": {},
                 "rotations": {}
               },
+              "PlaybackRate": 1,
               "RenderOptions": {
                 "GameLayer": true,
                 "OverlayLayer": false,
@@ -1134,7 +1170,7 @@
                   "Scale": 0.3,
                   "TextAlignment": "Center",
                   "TextScope": {
-                    "Text": "All commands are prefixed with \u0022snow\u0022",
+                    "Text": "All commands are prefixed with \"snow\"",
                     "TextColor": "1,1,1,1",
                     "FontName": "Poppins",
                     "FontSize": 64,
@@ -1449,39 +1485,6 @@
               "OnComponentUpdate": null
             }
           ]
-        }
-      ]
-    },
-    {
-      "__guid": "d984a5dc-8ef7-4997-a195-f5064ead814e",
-      "Flags": 0,
-      "Name": "Camera",
-      "Position": "2786.269,297.0909,2451.778",
-      "Tags": "maincamera",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.CameraComponent",
-          "__guid": "5ce588c8-d940-41bb-b260-e6f741c65d66",
-          "BackgroundColor": "0.33333,0.46275,0.52157,1",
-          "ClearFlags": "All",
-          "FieldOfView": 60,
-          "IsMainCamera": true,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "Orthographic": false,
-          "OrthographicHeight": 1204,
-          "Priority": 5,
-          "RenderExcludeTags": "ignore",
-          "RenderTags": "",
-          "TargetEye": "None",
-          "Viewport": "0,0,1,1",
-          "ZFar": 10000,
-          "ZNear": 10
         }
       ]
     },
