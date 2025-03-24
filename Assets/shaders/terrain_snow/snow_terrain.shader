@@ -5,7 +5,7 @@
 HEADER
 {
 	Description = "Terrain";
-    DevShader = true;
+    DevShader = false;
     DebugInfo = false;
 }
 
@@ -17,9 +17,8 @@ FEATURES
 
 MODES
 {
-    VrForward();
+    Forward();
     Depth( S_MODE_DEPTH );
-//     ToolsVis( S_MODE_TOOLS_VIS );
 }
 
 COMMON
@@ -281,7 +280,7 @@ PS
         Terrain_ProcGrid( i.LocalPosition.xy, albedo, roughness );
     #else
         // Not adding up to 1 is invalid, but lets just give everything to the first layer
-        float4 control = Tex2DS( Terrain::GetControlMap(), g_sBilinearBorder, uv );
+        float4 control = Terrain::GetControlMap().Sample( g_sBilinearBorder, uv );
         float sum = control.x + control.y + control.z + control.w;
 
         #if D_AUTO_SPLAT
