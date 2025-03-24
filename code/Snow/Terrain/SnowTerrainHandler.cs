@@ -286,24 +286,20 @@ public sealed class SnowTerrainHandler : Component
 		
 		MaskTexture = Texture.Create( TextureSize, TextureSize, ImageFormat.R16 )
 			.WithUAVBinding()
-			.WithName( "snow_texture" )
 			.Finish();
 		
 		SnowMask = Texture.Create( TextureSize, TextureSize, ImageFormat.R16 )
 			.WithUAVBinding()
-			.WithName( "snow_mask" )
 			.Finish();
 		
 		TerrainHeight = Texture.Create( TextureSize, TextureSize, ImageFormat.R16 )
 			.WithData( new ReadOnlySpan<ushort>( Terrain.Storage.HeightMap ) )
 			.WithUAVBinding()
-			.WithName( "terrain_height" )
 			.Finish();
 		
 		TerrainControl = Texture.Create( TextureSize, TextureSize )
 			.WithData( new ReadOnlySpan<Color32>( Terrain.Storage.ControlMap ) )
 			.WithUAVBinding()
-			.WithName( "terrain_control" )
 			.Finish();
 		
 		// create render target
