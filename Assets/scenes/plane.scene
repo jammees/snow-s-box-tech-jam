@@ -337,6 +337,7 @@
               "BackgroundColor": "0,0,0,1",
               "ClearFlags": "All",
               "FieldOfView": 46.02,
+              "FovAxis": "Horizontal",
               "IsMainCamera": false,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
@@ -1034,7 +1035,7 @@
           "Scale": 0.3,
           "TextAlignment": "Center",
           "TextScope": {
-            "Text": "This was originally what I would\u0027ve submitted",
+            "Text": "This was originally what I would've submitted",
             "TextColor": "1,1,1,1",
             "FontName": "Poppins",
             "FontSize": 64,
@@ -1096,7 +1097,7 @@
           "Scale": 0.3,
           "TextAlignment": "Center",
           "TextScope": {
-            "Text": "If I would\u0027ve not thought about giving the terrain a try.",
+            "Text": "If I would've not thought about giving the terrain a try.",
             "TextColor": "1,1,1,1",
             "FontName": "Poppins",
             "FontSize": 64,
@@ -1645,15 +1646,39 @@
       ]
     },
     {
-      "__guid": "96e88556-dc08-419b-a799-f42bef7f700e",
+      "__guid": "460128bd-f443-4565-87f4-124da82bbb15",
       "Flags": 0,
-      "Name": "player controller",
-      "Position": "-23.03558,33.25947,4",
+      "Name": "Camera",
+      "Position": "-242.2136,35.40785,126.8705",
+      "Rotation": "0,0.1305262,0,0.9914449",
+      "Tags": "maincamera",
       "Enabled": true,
-      "__Prefab": "prefabs/player controller.prefab",
-      "__PrefabVariables": {
-        "Show Return Hint": true
-      }
+      "Components": [
+        {
+          "__type": "Sandbox.CameraComponent",
+          "__guid": "545c31e5-58f0-4e6f-846b-4363182c733d",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 60,
+          "FovAxis": "Horizontal",
+          "IsMainCamera": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 10
+        }
+      ]
     }
   ],
   "SceneProperties": {
