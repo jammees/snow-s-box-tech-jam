@@ -10,7 +10,7 @@
       "Components": [
         {
           "__type": "Sandbox.SplashTransition",
-          "__guid": "fbde9b1d-5f1f-4cf3-84b2-8b491686a619",
+          "__guid": "45a73892-7af8-404f-99d3-d35e0496ed90",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
