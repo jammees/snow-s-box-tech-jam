@@ -1,3 +1,11 @@
+<h1>Disclaimer:</h1>
+<h2>
+  This repo has been moved to https://github.com/jammees/SboxDynamicSnow for a
+  full rewrite and making it a library
+</h2>
+
+<br>
+
 <div align="center">
   <img src="./Misc/dst_thumb_long.png">
 </div>
